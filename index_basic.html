@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Schools del Área Metropolitana de Washington DC - Calificaciones</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .legend {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            line-height: 1.8;
+            max-width: 200px;
+        }
+
+        .legend h4 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .legend-color {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.2);
+        }
+
+        .legend-text {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .info-panel {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+
+        .info-panel h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info-panel p {
+            font-size: 13px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .leaflet-popup-content {
+            margin: 10px 15px;
+        }
+
+        .popup-title {
+            font-weight: bold;
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .popup-rating {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .popup-address {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .popup-jurisdiction {
+            font-size: 11px;
+            color: #888;
+            font-style: italic;
+        }
+
+        .filter-control {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .filter-control h4 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .filter-control label {
+            display: block;
+            margin: 5px 0;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .filter-control input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .stats-panel {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // ============================================
+        // DATOS DE HIGH SCHOOLS
+        // Última actualización: Enero 2026
+        // Fuente: GreatSchools.org
+        // ============================================
+
+        const highSchools = [
+            // ==================== ARLINGTON, VA ====================
+            {
+                name: "Yorktown High School",
+                address: "5200 Yorktown Boulevard, Arlington, VA 22207",
+                rating: 9,
+                lat: 38.9089,
+                lng: -77.1342,
+                jurisdiction: "Arlington, VA"
+            },
+            {
+                name: "Washington-Liberty High School",
+                address: "1301 North Stafford Street, Arlington, VA 22201",
+                rating: 6,
+                lat: 38.8887,
+                lng: -77.0942,
+                jurisdiction: "Arlington, VA"
+            },
+            {
+                name: "Wakefield High School",
+                address: "1325 S. Dinwiddie Street, Arlington, VA 22206",
+                rating: 4,
+                lat: 38.8422,
+                lng: -77.0856,
+                jurisdiction: "Arlington, VA"
+            },
+
+            // ==================== FAIRFAX COUNTY, VA ====================
+            // NOTA: Thomas Jefferson HS eliminado - es escuela magnet sin attendance zone
+            {
+                name: "Langley High School",
+                address: "6520 Georgetown Pike, McLean, VA 22101",
+                rating: 9,
+                lat: 38.9406,
+                lng: -77.1881,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "McLean High School",
+                address: "1633 Davidson Road, McLean, VA 22101",
+                rating: 9,
+                lat: 38.9312,
+                lng: -77.1775,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Woodson High School",
+                address: "9525 Main St, Fairfax, VA 22031",
+                rating: 9,
+                lat: 38.8561,
+                lng: -77.2864,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "West Springfield High School",
+                address: "6100 Rolling Road, Springfield, VA 22152",
+                rating: 9,
+                lat: 38.7689,
+                lng: -77.2022,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Madison High School",
+                address: "2500 James Madison Drive, Vienna, VA 22181",
+                rating: 8,
+                lat: 38.9017,
+                lng: -77.2586,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Oakton High School",
+                address: "2900 Sutton Road, Vienna, VA 22181",
+                rating: 8,
+                lat: 38.8792,
+                lng: -77.3103,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Lake Braddock Secondary",
+                address: "9200 Burke Lake Road, Burke, VA 22015",
+                rating: 8,
+                lat: 38.7900,
+                lng: -77.2756,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Chantilly High School",
+                address: "4201 Stringfellow Road, Chantilly, VA 20151",
+                rating: 8,
+                lat: 38.8767,
+                lng: -77.4225,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Robinson Secondary",
+                address: "5035 Sideburn Road, Fairfax, VA 22032",
+                rating: 7,
+                lat: 38.8242,
+                lng: -77.3069,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Marshall High School",
+                address: "7731 Leesburg Pike, Falls Church, VA 22043",
+                rating: 7,
+                lat: 38.9097,
+                lng: -77.2147,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "South County High School",
+                address: "8501 Silverbrook Road, Lorton, VA 22079",
+                rating: 7,
+                lat: 38.6967,
+                lng: -77.2217,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Fairfax High School",
+                address: "3501 Lion Run, Fairfax, VA 22030",
+                rating: 6,
+                lat: 38.8586,
+                lng: -77.3169,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "South Lakes High School",
+                address: "11400 South Lakes Drive, Reston, VA 20191",
+                rating: 6,
+                lat: 38.9311,
+                lng: -77.3606,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Westfield High School",
+                address: "4700 Stonecroft Boulevard, Chantilly, VA 20151",
+                rating: 6,
+                lat: 38.8533,
+                lng: -77.4378,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Hayfield Secondary",
+                address: "7630 Telegraph Road, Alexandria, VA 22315",
+                rating: 6,
+                lat: 38.7539,
+                lng: -77.1208,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "West Potomac High School",
+                address: "6500 Quander Road, Alexandria, VA 22307",
+                rating: 5,
+                lat: 38.7592,
+                lng: -77.0717,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "John R. Lewis High School",
+                address: "6540 Franconia Road, Springfield, VA 22150",
+                rating: 4,
+                lat: 38.7814,
+                lng: -77.1394,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Edison High School",
+                address: "5801 Franconia Road, Alexandria, VA 22310",
+                rating: 4,
+                lat: 38.7975,
+                lng: -77.1297,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Herndon High School",
+                address: "700 Bennett Street, Herndon, VA 20170",
+                rating: 3,
+                lat: 38.9647,
+                lng: -77.3864,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Annandale High School",
+                address: "4700 Medford Drive, Annandale, VA 22003",
+                rating: 3,
+                lat: 38.8308,
+                lng: -77.2044,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Mount Vernon High School",
+                address: "8515 Old Mount Vernon Road, Alexandria, VA 22309",
+                rating: 2,
+                lat: 38.7156,
+                lng: -77.0886,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Falls Church High School",
+                address: "7521 Jaguar Trail, Falls Church, VA 22042",
+                rating: 2,
+                lat: 38.8672,
+                lng: -77.1756,
+                jurisdiction: "Fairfax County, VA"
+            },
+            {
+                name: "Justice High School",
+                address: "3301 Peace Valley Lane, Falls Church, VA 22044",
+                rating: 2,
+                lat: 38.8539,
+                lng: -77.1594,
+                jurisdiction: "Fairfax County, VA"
+            },
+
+            // ==================== FALLS CHURCH CITY, VA ====================
+            {
+                name: "Meridian High School",
+                address: "121 Mustang Alley, Falls Church, VA 22043",
+                rating: 9,
+                lat: 38.8917,
+                lng: -77.1711,
+                jurisdiction: "Falls Church City, VA"
+            },
+
+            // ==================== ALEXANDRIA CITY, VA ====================
+            {
+                name: "Alexandria City High School",
+                address: "3330 King Street, Alexandria, VA 22302",
+                rating: 4,
+                lat: 38.8178,
+                lng: -77.0856,
+                jurisdiction: "Alexandria City, VA"
+            },
+
+            // ==================== MONTGOMERY COUNTY, MD ====================
+            {
+                name: "Thomas S. Wootton High School",
+                address: "2100 Wootton Parkway, Rockville, MD 20850",
+                rating: 10,
+                lat: 39.1089,
+                lng: -77.1889,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Walt Whitman High School",
+                address: "7100 Whittier Boulevard, Bethesda, MD 20817",
+                rating: 9,
+                lat: 38.9767,
+                lng: -77.1278,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Walter Johnson High School",
+                address: "6400 Rock Spring Dr, Bethesda, MD 20814",
+                rating: 9,
+                lat: 39.0092,
+                lng: -77.1044,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Richard Montgomery High School",
+                address: "250 Richard Montgomery Drive, Rockville, MD 20852",
+                rating: 8,
+                lat: 39.0628,
+                lng: -77.1231,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Bethesda-Chevy Chase High School",
+                address: "4301 East-West Highway, Bethesda, MD 20814",
+                rating: 8,
+                lat: 38.9903,
+                lng: -77.0758,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Montgomery Blair High School",
+                address: "51 University Boulevard East, Silver Spring, MD 20901",
+                rating: 7,
+                lat: 38.9950,
+                lng: -77.0097,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Northwood High School",
+                address: "919 University Boulevard West, Silver Spring, MD 20901",
+                rating: 7,
+                lat: 39.0036,
+                lng: -77.0247,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "James Hubert Blake High School",
+                address: "300 Norwood Road, Silver Spring, MD 20905",
+                rating: 6,
+                lat: 39.1047,
+                lng: -76.9831,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Rockville High School",
+                address: "2100 Baltimore Road, Rockville, MD 20851",
+                rating: 6,
+                lat: 39.0708,
+                lng: -77.1439,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Wheaton High School",
+                address: "12401 Dalewood Drive, Silver Spring, MD 20906",
+                rating: 5,
+                lat: 39.0414,
+                lng: -77.0481,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Col. Zadok Magruder High School",
+                address: "5939 Muncaster Mill Rd, Rockville, MD 20855",
+                rating: 5,
+                lat: 39.1331,
+                lng: -77.1450,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "John F. Kennedy High School",
+                address: "1901 Randolph Rd, Silver Spring, MD 20902",
+                rating: 4,
+                lat: 39.0258,
+                lng: -77.0431,
+                jurisdiction: "Montgomery County, MD"
+            },
+            {
+                name: "Springbrook High School",
+                address: "201 Valley Brook Dr, Silver Spring, MD 20904",
+                rating: 4,
+                lat: 39.0628,
+                lng: -76.9858,
+                jurisdiction: "Montgomery County, MD"
+            },
+
+            // ==================== PRINCE GEORGE'S COUNTY, MD ====================
+            {
+                name: "Eleanor Roosevelt High School",
+                address: "7601 Hanover Parkway, Greenbelt, MD 20770",
+                rating: 7,
+                lat: 38.9936,
+                lng: -76.8831,
+                jurisdiction: "Prince George's County, MD"
+            },
+            {
+                name: "Frederick Douglass High School",
+                address: "8000 Croom Road, Upper Marlboro, MD 20772",
+                rating: 5,
+                lat: 38.8072,
+                lng: -76.7642,
+                jurisdiction: "Prince George's County, MD"
+            },
+            {
+                name: "Bowie High School",
+                address: "15200 Annapolis Road, Bowie, MD 20715",
+                rating: 4,
+                lat: 38.9633,
+                lng: -76.7256,
+                jurisdiction: "Prince George's County, MD"
+            },
+            {
+                name: "Dr. Henry A. Wise Jr. High School",
+                address: "12650 Brooke Lane, Upper Marlboro, MD 20772",
+                rating: 3,
+                lat: 38.8408,
+                lng: -76.8006,
+                jurisdiction: "Prince George's County, MD"
+            },
+            {
+                name: "Largo High School",
+                address: "505 Largo Road, Upper Marlboro, MD 20774",
+                rating: 3,
+                lat: 38.8803,
+                lng: -76.8311,
+                jurisdiction: "Prince George's County, MD"
+            },
+            {
+                name: "Northwestern High School",
+                address: "7000 Adelphi Road, Hyattsville, MD 20782",
+                rating: 2,
+                lat: 38.9697,
+                lng: -76.9617,
+                jurisdiction: "Prince George's County, MD"
+            },
+
+            // ==================== WASHINGTON, DC ====================
+            // NOTA: Solo escuelas con boundaries oficiales en DC.geojson (10 escuelas)
+            // Eliminadas: Benjamin Banneker, School Without Walls, McKinley Tech,
+            // Phelps, Duke Ellington, Columbia Heights, Ron Brown, Bard (escuelas magnet/especiales)
+            {
+                name: "Jackson-Reed High School",
+                address: "3950 Chesapeake Street NW, Washington, DC 20016",
+                rating: 7,
+                lat: 38.9511,
+                lng: -77.0789,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "H.D. Woodson High School",
+                address: "540 55th Street NE, Washington, DC 20019",
+                rating: 4,
+                lat: 38.8983,
+                lng: -76.9231,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "Coolidge High School",
+                address: "6315 5th Street NW, Washington, DC 20011",
+                rating: 4,
+                lat: 38.9608,
+                lng: -77.0242,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "Roosevelt High School",
+                address: "4301 13th Street NW, Washington, DC 20011",
+                rating: 4,
+                lat: 38.9428,
+                lng: -77.0317,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "Dunbar High School",
+                address: "101 N Street NW, Washington, DC 20001",
+                rating: 3,
+                lat: 38.9078,
+                lng: -77.0122,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "Eastern High School",
+                address: "1700 East Capitol Street SE, Washington, DC 20003",
+                rating: 2,
+                lat: 38.8889,
+                lng: -76.9806,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "Cardozo Education Campus",
+                address: "1200 Clifton Street NW, Washington, DC 20009",
+                rating: 2,
+                lat: 38.9267,
+                lng: -77.0283,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "Ballou High School",
+                address: "3401 4th Street SE, Washington, DC 20032",
+                rating: 2,
+                lat: 38.8383,
+                lng: -76.9939,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "Anacostia High School",
+                address: "1601 16th Street SE, Washington, DC 20020",
+                rating: 2,
+                lat: 38.8639,
+                lng: -76.9806,
+                jurisdiction: "Washington, DC"
+            },
+            {
+                name: "MacArthur High School",
+                address: "4530 MacArthur Boulevard NW, Washington, DC 20007",
+                rating: 2,
+                lat: 38.9267,
+                lng: -77.1044,
+                jurisdiction: "Washington, DC"
+            }
+        ];
+
+        // ============================================
+        // FUNCIONES DE UTILIDAD
+        // ============================================
+
+        // Obtener color según calificación
+        function getRatingColor(rating) {
+            if (rating <= 2) return '#d73027';      // Rojo
+            if (rating <= 4) return '#fc8d59';      // Naranja
+            if (rating <= 6) return '#fee08b';      // Amarillo
+            if (rating <= 8) return '#91cf60';      // Verde claro
+            return '#1a9850';                        // Verde oscuro
+        }
+
+        // Obtener descripción de calificación
+        function getRatingDescription(rating) {
+            if (rating <= 2) return 'Muy por debajo del promedio';
+            if (rating <= 4) return 'Por debajo del promedio';
+            if (rating <= 6) return 'Promedio';
+            if (rating <= 8) return 'Por encima del promedio';
+            return 'Excelente';
+        }
+
+        // Crear polígono aproximado (hexágono) alrededor de una escuela
+        function createSchoolZone(lat, lng, radiusKm = 2.5) {
+            const points = [];
+            const numSides = 6;
+
+            for (let i = 0; i < numSides; i++) {
+                const angle = (i * 2 * Math.PI / numSides) - Math.PI / 2;
+                // Añadir pequeña variación para que no se vean todos iguales
+                const variation = 0.85 + Math.random() * 0.3;
+                const latOffset = (radiusKm * variation / 111) * Math.cos(angle);
+                const lngOffset = (radiusKm * variation / (111 * Math.cos(lat * Math.PI / 180))) * Math.sin(angle);
+                points.push([lat + latOffset, lng + lngOffset]);
+            }
+
+            return points;
+        }
+
+        // ============================================
+        // INICIALIZACIÓN DEL MAPA
+        // ============================================
+
+        // Crear mapa centrado en Washington DC
+        const map = L.map('map').setView([38.9072, -77.0369], 10);
+
+        // Añadir capa base de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Grupos de capas para filtrado
+        const jurisdictionLayers = {};
+        const allSchoolsLayer = L.layerGroup().addTo(map);
+
+        // Crear zonas y marcadores para cada escuela
+        highSchools.forEach(school => {
+            const color = getRatingColor(school.rating);
+
+            // Crear polígono de zona
+            const zoneCoords = createSchoolZone(school.lat, school.lng);
+            const zone = L.polygon(zoneCoords, {
+                color: color,
+                weight: 2,
+                opacity: 0.8,
+                fillColor: color,
+                fillOpacity: 0.5
+            });
+
+            // Crear marcador en el centro
+            const marker = L.circleMarker([school.lat, school.lng], {
+                radius: 8,
+                fillColor: color,
+                color: '#fff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 1
+            });
+
+            // Contenido del popup
+            const popupContent = `
+                <div class="popup-title">${school.name}</div>
+                <div class="popup-rating" style="background-color: ${color}">
+                    ${school.rating}/10
+                </div>
+                <div style="font-size: 11px; color: #666; margin-bottom: 5px;">
+                    ${getRatingDescription(school.rating)}
+                </div>
+                <div class="popup-address">📍 ${school.address}</div>
+                <div class="popup-jurisdiction">🏛️ ${school.jurisdiction}</div>
+            `;
+
+            zone.bindPopup(popupContent);
+            marker.bindPopup(popupContent);
+
+            // Añadir a capa general
+            zone.addTo(allSchoolsLayer);
+            marker.addTo(allSchoolsLayer);
+
+            // Organizar por jurisdicción
+            if (!jurisdictionLayers[school.jurisdiction]) {
+                jurisdictionLayers[school.jurisdiction] = L.layerGroup();
+            }
+            jurisdictionLayers[school.jurisdiction].addLayer(zone);
+            jurisdictionLayers[school.jurisdiction].addLayer(marker);
+        });
+
+        // ============================================
+        // CONTROLES
+        // ============================================
+
+        // Leyenda
+        const legend = L.control({ position: 'bottomright' });
+        legend.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'legend');
+            div.innerHTML = `
+                <h4>Calificación GreatSchools</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #1a9850"></div>
+                    <span class="legend-text">9-10 Excelente</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #91cf60"></div>
+                    <span class="legend-text">7-8 Sobre el promedio</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #fee08b"></div>
+                    <span class="legend-text">5-6 Promedio</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #fc8d59"></div>
+                    <span class="legend-text">3-4 Bajo el promedio</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d73027"></div>
+                    <span class="legend-text">1-2 Muy bajo</span>
+                </div>
+            `;
+            return div;
+        };
+        legend.addTo(map);
+
+        // Panel de información
+        const info = L.control({ position: 'topright' });
+        info.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'info-panel');
+            div.innerHTML = `
+                <h4>🏫 High Schools DC Metro</h4>
+                <p><strong>Total de escuelas:</strong> ${highSchools.length}</p>
+                <p><strong>Jurisdicciones:</strong> ${Object.keys(jurisdictionLayers).length}</p>
+                <p style="margin-top: 10px; font-size: 11px;">
+                    <em>Haz clic en una zona o marcador para ver detalles de la escuela.</em>
+                </p>
+                <p style="margin-top: 5px; font-size: 10px; color: #888;">
+                    Datos: GreatSchools.org (Enero 2026)
+                </p>
+            `;
+            return div;
+        };
+        info.addTo(map);
+
+        // Control de filtro por jurisdicción
+        const filterControl = L.control({ position: 'topleft' });
+        filterControl.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'filter-control');
+            let checkboxesHtml = '<h4>Filtrar por Jurisdicción</h4>';
+
+            Object.keys(jurisdictionLayers).sort().forEach(jurisdiction => {
+                const count = highSchools.filter(s => s.jurisdiction === jurisdiction).length;
+                checkboxesHtml += `
+                    <label>
+                        <input type="checkbox" checked data-jurisdiction="${jurisdiction}">
+                        ${jurisdiction} (${count})
+                    </label>
+                `;
+            });
+
+            div.innerHTML = checkboxesHtml;
+
+            // Evento para filtrar
+            div.addEventListener('change', function(e) {
+                if (e.target.type === 'checkbox') {
+                    const jurisdiction = e.target.dataset.jurisdiction;
+                    const layer = jurisdictionLayers[jurisdiction];
+
+                    // Remover todos los elementos de allSchoolsLayer y reconstruir
+                    allSchoolsLayer.clearLayers();
+
+                    const checkboxes = div.querySelectorAll('input[type="checkbox"]');
+                    checkboxes.forEach(cb => {
+                        if (cb.checked) {
+                            const jur = cb.dataset.jurisdiction;
+                            highSchools.filter(s => s.jurisdiction === jur).forEach(school => {
+                                const color = getRatingColor(school.rating);
+
+                                const zoneCoords = createSchoolZone(school.lat, school.lng);
+                                const zone = L.polygon(zoneCoords, {
+                                    color: color,
+                                    weight: 2,
+                                    opacity: 0.8,
+                                    fillColor: color,
+                                    fillOpacity: 0.5
+                                });
+
+                                const marker = L.circleMarker([school.lat, school.lng], {
+                                    radius: 8,
+                                    fillColor: color,
+                                    color: '#fff',
+                                    weight: 2,
+                                    opacity: 1,
+                                    fillOpacity: 1
+                                });
+
+                                const popupContent = `
+                                    <div class="popup-title">${school.name}</div>
+                                    <div class="popup-rating" style="background-color: ${color}">
+                                        ${school.rating}/10
+                                    </div>
+                                    <div style="font-size: 11px; color: #666; margin-bottom: 5px;">
+                                        ${getRatingDescription(school.rating)}
+                                    </div>
+                                    <div class="popup-address">📍 ${school.address}</div>
+                                    <div class="popup-jurisdiction">🏛️ ${school.jurisdiction}</div>
+                                `;
+
+                                zone.bindPopup(popupContent);
+                                marker.bindPopup(popupContent);
+
+                                zone.addTo(allSchoolsLayer);
+                                marker.addTo(allSchoolsLayer);
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Prevenir que clics en el control afecten el mapa
+            L.DomEvent.disableClickPropagation(div);
+
+            return div;
+        };
+        filterControl.addTo(map);
+
+        // Panel de estadísticas
+        const stats = L.control({ position: 'bottomleft' });
+        stats.onAdd = function(map) {
+            const div = L.DomUtil.create('div', 'stats-panel');
+
+            const excellent = highSchools.filter(s => s.rating >= 9).length;
+            const aboveAvg = highSchools.filter(s => s.rating >= 7 && s.rating < 9).length;
+            const average = highSchools.filter(s => s.rating >= 5 && s.rating < 7).length;
+            const belowAvg = highSchools.filter(s => s.rating >= 3 && s.rating < 5).length;
+            const low = highSchools.filter(s => s.rating < 3).length;
+
+            div.innerHTML = `
+                <strong>Distribución de calificaciones:</strong><br>
+                🟢 Excelente (9-10): ${excellent} |
+                🟩 Alto (7-8): ${aboveAvg} |
+                🟡 Promedio (5-6): ${average} |
+                🟠 Bajo (3-4): ${belowAvg} |
+                🔴 Muy bajo (1-2): ${low}
+            `;
+            return div;
+        };
+        stats.addTo(map);
+
+        console.log('Mapa cargado con', highSchools.length, 'escuelas');
+    </script>
+</body>
+</html>
