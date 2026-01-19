@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
     <style>
         * {
@@ -30,7 +31,7 @@
             background: white;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             max-width: 300px;
         }
 
@@ -83,7 +84,7 @@
             background: white;
             padding: 10px 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             font-size: 12px;
             color: #555;
         }
@@ -95,7 +96,7 @@
             background: white;
             padding: 15px 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             z-index: 1001;
             font-family: Arial, sans-serif;
             font-size: 14px;
@@ -120,8 +121,39 @@
             color: #666;
             line-height: 1.6;
         }
+
+        /* Estilos para la leyenda */
+        .legend {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            line-height: 18px;
+            color: #333;
+            font-size: 12px;
+            min-width: 110px;
+        }
+
+        .legend i {
+            width: 16px;
+            height: 16px;
+            float: left;
+            margin-right: 10px;
+            opacity: 0.9;
+            border-radius: 3px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 13px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
+
 <body>
     <div id="map"></div>
     <div id="loading-status">
@@ -131,7 +163,7 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <script>
         // ============================================
@@ -668,13 +700,11 @@
         // FUNCIONES DE UTILIDAD
         // ============================================
 
-        // Obtener color según calificación
+        // Obtener color según calificación (usando la escala de 10 niveles)
         function getRatingColor(rating) {
-            if (rating <= 2) return '#d73027';      // Rojo
-            if (rating <= 4) return '#fc8d59';      // Naranja
-            if (rating <= 6) return '#fee08b';      // Amarillo
-            if (rating <= 8) return '#91cf60';      // Verde claro
-            return '#1a9850';                        // Verde oscuro
+            // Nota: ratingColors se define más adelante pero esta función se llama
+            // después de que el script se ha cargado completamente.
+            return ratingColors[rating] || '#999';
         }
 
         // Obtener descripción de calificación
@@ -792,6 +822,20 @@
             });
         }
 
+        // Colores por rating (gradiente de rojo a verde)
+        const ratingColors = {
+            1: '#d73027',  // Rojo oscuro
+            2: '#e45a3b',  // Rojo
+            3: '#f17c4a',  // Rojo-naranja
+            4: '#fc8d59',  // Naranja
+            5: '#fed686',  // Naranja-amarillo
+            6: '#fee08b',  // Amarillo
+            7: '#d4e986',  // Amarillo-verde
+            8: '#a6d96a',  // Verde claro
+            9: '#66bd63',  // Verde
+            10: '#1a9850'   // Verde oscuro
+        };
+
         // ============================================
         // CONTROLES
         // ============================================
@@ -799,7 +843,7 @@
 
         // Panel de información
         const info = L.control({ position: 'topright' });
-        info.onAdd = function(map) {
+        info.onAdd = function (map) {
             const div = L.DomUtil.create('div', 'info-panel');
             div.innerHTML = `
                 <h4>🏫 High Schools DC Metro</h4>
@@ -820,35 +864,31 @@
         };
         info.addTo(map);
 
+        // Leyenda de colores
+        const legend = L.control({ position: 'bottomright' });
+        legend.onAdd = function (map) {
+            const div = L.DomUtil.create('div', 'legend');
+            const grades = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
-        // Panel de estadísticas
-        const stats = L.control({ position: 'bottomleft' });
-        stats.onAdd = function(map) {
-            const div = L.DomUtil.create('div', 'stats-panel');
+            div.innerHTML = '<div class="legend-title">Calificación GS</div>';
 
-            const excellent = highSchools.filter(s => s.rating >= 9).length;
-            const aboveAvg = highSchools.filter(s => s.rating >= 7 && s.rating < 9).length;
-            const average = highSchools.filter(s => s.rating >= 5 && s.rating < 7).length;
-            const belowAvg = highSchools.filter(s => s.rating >= 3 && s.rating < 5).length;
-            const low = highSchools.filter(s => s.rating < 3).length;
+            for (let i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                    '<i style="background:' + ratingColors[grades[i]] + '"></i> ' +
+                    grades[i] + (grades[i] >= 9 ? ' (Excelente)' :
+                        grades[i] <= 2 ? ' (Muy bajo)' : '') + '<br>';
+            }
 
-            div.innerHTML = `
-                <strong>Distribución de calificaciones:</strong><br>
-                🟢 Excelente (9-10): ${excellent} |
-                🟩 Alto (7-8): ${aboveAvg} |
-                🟡 Promedio (5-6): ${average} |
-                🟠 Bajo (3-4): ${belowAvg} |
-                🔴 Muy bajo (1-2): ${low}
-            `;
             return div;
         };
-        stats.addTo(map);
+        legend.addTo(map);
+
 
         // ============================================
         // EVENT LISTENER PARA DESRESALTAR AL HACER CLICK EN EL MAPA
         // ============================================
 
-        map.on('click', function(e) {
+        map.on('click', function (e) {
             // Verificar que no se hizo click en un marcador
             // Si hay un polígono resaltado, restaurarlo
             if (currentHighlightedPolygon) {
@@ -877,20 +917,6 @@
             "Alexandria.geojson",
             "DC.geojson"
         ];
-
-        // Colores por rating (gradiente de rojo a verde)
-        const ratingColors = {
-            1:  '#d73027',  // Rojo oscuro
-            2:  '#e45a3b',  // Rojo
-            3:  '#f17c4a',  // Rojo-naranja
-            4:  '#fc8d59',  // Naranja
-            5:  '#fed686',  // Naranja-amarillo
-            6:  '#fee08b',  // Amarillo
-            7:  '#d4e986',  // Amarillo-verde
-            8:  '#a6d96a',  // Verde claro
-            9:  '#66bd63',  // Verde
-            10: '#1a9850'   // Verde oscuro
-        };
 
         // Función para resaltar un polígono
         function highlightPolygon(polygon, color) {
@@ -1043,7 +1069,7 @@
                                 markerToPolygonMap.set(marker, polygonLayer);
 
                                 // Resaltar cuando se hace click en el marcador
-                                marker.on('click', function() {
+                                marker.on('click', function () {
                                     highlightPolygon(polygonLayer, color);
                                 });
 
@@ -1082,8 +1108,8 @@
                             const matchingSchool = dcSchools.find(school => {
                                 const schoolNameNorm = normalizeDCName(school.name);
                                 return schoolNameNorm.includes(zoneNameNorm) ||
-                                       zoneNameNorm.includes(schoolNameNorm) ||
-                                       schoolNameNorm === zoneNameNorm;
+                                    zoneNameNorm.includes(schoolNameNorm) ||
+                                    schoolNameNorm === zoneNameNorm;
                             });
 
                             if (matchingSchool) {
@@ -1136,7 +1162,7 @@
                                     markerToPolygonMap.set(marker, polygonLayer);
 
                                     // Resaltar cuando se hace click en el marcador
-                                    marker.on('click', function() {
+                                    marker.on('click', function () {
                                         highlightPolygon(polygonLayer, color);
                                     });
 
@@ -1151,11 +1177,11 @@
                     } else {
                         // Archivos normales (Fairfax, Montgomery, Arlington)
                         L.geoJSON(data, {
-                            filter: function(feature) {
+                            filter: function (feature) {
                                 const props = feature.properties;
                                 const schoolName = props.SCHOOL_NAME || props.S_NAME ||
-                                                  props.HS_Name || props.NAME ||
-                                                  props.SchoolName || props.name || '';
+                                    props.HS_Name || props.NAME ||
+                                    props.SchoolName || props.name || '';
 
                                 const nameLower = schoolName.toLowerCase();
 
@@ -1176,11 +1202,11 @@
 
                                 return true;
                             },
-                            style: function(feature) {
+                            style: function (feature) {
                                 const props = feature.properties;
                                 const schoolName = props.SCHOOL_NAME || props.S_NAME ||
-                                                  props.HS_Name || props.NAME ||
-                                                  props.SchoolName || props.name || '';
+                                    props.HS_Name || props.NAME ||
+                                    props.SchoolName || props.name || '';
 
                                 const schoolData = findSchoolRating(schoolName);
                                 const rating = schoolData ? schoolData.rating : 5;
@@ -1194,11 +1220,11 @@
                                     fillOpacity: 0.5
                                 };
                             },
-                            onEachFeature: function(feature, layer) {
+                            onEachFeature: function (feature, layer) {
                                 const props = feature.properties;
                                 const schoolName = props.SCHOOL_NAME || props.S_NAME ||
-                                                  props.HS_Name || props.NAME ||
-                                                  props.SchoolName || props.name || 'Escuela desconocida';
+                                    props.HS_Name || props.NAME ||
+                                    props.SchoolName || props.name || 'Escuela desconocida';
 
                                 const schoolData = findSchoolRating(schoolName);
 
@@ -1243,7 +1269,7 @@
                                     markerToPolygonMap.set(marker, layer);
 
                                     // Resaltar cuando se hace click en el marcador
-                                    marker.on('click', function() {
+                                    marker.on('click', function () {
                                         highlightPolygon(layer, color);
                                     });
 
@@ -1301,4 +1327,5 @@
         console.log('Mapa cargado con', highSchools.length, 'escuelas');
     </script>
 </body>
+
 </html>
