@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Boundaries Loading</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Test de Carga de Boundaries</h1>
+    <div id="output"></div>
+
+    <script>
+        async function testLoad() {
+            const output = document.getElementById('output');
+            const files = [
+                "fairfax_hs_boundaries.geojson",
+                "montgomery_hs_boundaries.geojson",
+                "arlington_hs_boundaries.geojson",
+                "alexandria_hs_boundaries.geojson"
+            ];
+
+            for (const file of files) {
+                try {
+                    output.innerHTML += `<p>Intentando cargar ${file}...</p>`;
+                    const response = await fetch(file);
+
+                    if (!response.ok) {
+                        output.innerHTML += `<p style="color: red;">❌ ${file}: HTTP ${response.status}</p>`;
+                        continue;
+                    }
+
+                    const data = await response.json();
+                    const numFeatures = data.features ? data.features.length : 0;
+                    output.innerHTML += `<p style="color: green;">✓ ${file}: ${numFeatures} features</p>`;
+
+                    // Mostrar nombre del primer feature
+                    if (numFeatures > 0) {
+                        const props = data.features[0].properties;
+                        const schoolName = props.SCHOOL_NAME || props.S_NAME ||
+                                          props.HS_Name || props.NAME || 'Unknown';
+                        output.innerHTML += `<p style="margin-left: 20px;">Ejemplo: ${schoolName}</p>`;
+                    }
+                } catch (error) {
+                    output.innerHTML += `<p style="color: red;">❌ ${file}: ${error.message}</p>`;
+                }
+            }
+        }
+
+        testLoad();
+    </script>
+</body>
+</html>
