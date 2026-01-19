@@ -4,7 +4,8 @@ Visualización interactiva de las calificaciones de high schools públicas en el
 
 ## Contenido
 
-- [index.html](index.html) - Archivo principal con la visualización
+- [index.html](index.html) - Archivo principal con la visualización (Boundaries Oficiales)
+- [index_basic.html](index_basic.html) - Versión simplificada con polígonos aproximados
 
 ## Jurisdicciones Incluidas
 
