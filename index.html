@@ -25,41 +25,6 @@
             height: 100vh;
         }
 
-        .legend {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            line-height: 1.8;
-            max-width: 200px;
-        }
-
-        .legend h4 {
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: #333;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
-        }
-
-        .legend-color {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-            border-radius: 4px;
-            border: 1px solid rgba(0,0,0,0.2);
-        }
-
-        .legend-text {
-            font-size: 12px;
-            color: #555;
-        }
 
         .info-panel {
             background: white;
@@ -113,29 +78,6 @@
             font-style: italic;
         }
 
-        .filter-control {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .filter-control h4 {
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .filter-control label {
-            display: block;
-            margin: 5px 0;
-            font-size: 12px;
-            cursor: pointer;
-        }
-
-        .filter-control input[type="checkbox"] {
-            margin-right: 8px;
-        }
 
         .stats-panel {
             background: white;
@@ -854,65 +796,6 @@
         // CONTROLES
         // ============================================
 
-        // Leyenda
-        const legend = L.control({ position: 'bottomright' });
-        legend.onAdd = function(map) {
-            const div = L.DomUtil.create('div', 'legend');
-            div.innerHTML = `
-                <h4>Calificación GreatSchools</h4>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #1a9850"></div>
-                    <span class="legend-text">10</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #66bd63"></div>
-                    <span class="legend-text">9</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #a6d96a"></div>
-                    <span class="legend-text">8</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #d4e986"></div>
-                    <span class="legend-text">7</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #fee08b"></div>
-                    <span class="legend-text">6</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #fed686"></div>
-                    <span class="legend-text">5</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #fc8d59"></div>
-                    <span class="legend-text">4</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #f17c4a"></div>
-                    <span class="legend-text">3</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #e45a3b"></div>
-                    <span class="legend-text">2</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #d73027"></div>
-                    <span class="legend-text">1</span>
-                </div>
-                <hr style="margin: 10px 0; border: none; border-top: 1px solid #ddd;">
-                <div style="font-size: 11px; margin-top: 8px;">
-                    <div style="margin-bottom: 5px;">
-                        <strong style="color: #1a9850;">━━</strong> Boundary oficial
-                    </div>
-                    <div>
-                        <strong style="color: #666;">┄┄</strong> Zona aproximada
-                    </div>
-                </div>
-            `;
-            return div;
-        };
-        legend.addTo(map);
 
         // Panel de información
         const info = L.control({ position: 'topright' });
@@ -937,88 +820,6 @@
         };
         info.addTo(map);
 
-        // Control de filtro por jurisdicción
-        const filterControl = L.control({ position: 'topleft' });
-        filterControl.onAdd = function(map) {
-            const div = L.DomUtil.create('div', 'filter-control');
-            let checkboxesHtml = '<h4>Filtrar por Jurisdicción</h4>';
-
-            Object.keys(jurisdictionLayers).sort().forEach(jurisdiction => {
-                const count = highSchools.filter(s => s.jurisdiction === jurisdiction).length;
-                checkboxesHtml += `
-                    <label>
-                        <input type="checkbox" checked data-jurisdiction="${jurisdiction}">
-                        ${jurisdiction} (${count})
-                    </label>
-                `;
-            });
-
-            div.innerHTML = checkboxesHtml;
-
-            // Evento para filtrar
-            div.addEventListener('change', function(e) {
-                if (e.target.type === 'checkbox') {
-                    const jurisdiction = e.target.dataset.jurisdiction;
-                    const layer = jurisdictionLayers[jurisdiction];
-
-                    // Remover todos los elementos de allSchoolsLayer y reconstruir
-                    allSchoolsLayer.clearLayers();
-
-                    const checkboxes = div.querySelectorAll('input[type="checkbox"]');
-                    checkboxes.forEach(cb => {
-                        if (cb.checked) {
-                            const jur = cb.dataset.jurisdiction;
-                            highSchools.filter(s => s.jurisdiction === jur).forEach(school => {
-                                const color = getRatingColor(school.rating);
-
-                                const zoneCoords = createSchoolZone(school.lat, school.lng);
-                                const zone = L.polygon(zoneCoords, {
-                                    color: color,
-                                    weight: 2,
-                                    opacity: 0.8,
-                                    fillColor: color,
-                                    fillOpacity: 0.5
-                                });
-
-                                const marker = L.circleMarker([school.lat, school.lng], {
-                                    radius: 8,
-                                    fillColor: color,
-                                    color: '#fff',
-                                    weight: 2,
-                                    opacity: 1,
-                                    fillOpacity: 1,
-                                    pane: 'markerPane'
-                                });
-
-                                const popupContent = `
-                                    <div class="popup-title">${school.name}</div>
-                                    <div class="popup-rating" style="background-color: ${color}">
-                                        ${school.rating}/10
-                                    </div>
-                                    <div style="font-size: 11px; color: #666; margin-bottom: 5px;">
-                                        ${getRatingDescription(school.rating)}
-                                    </div>
-                                    <div class="popup-address">📍 ${school.address}</div>
-                                    <div class="popup-jurisdiction">🏛️ ${school.jurisdiction}</div>
-                                `;
-
-                                zone.bindPopup(popupContent);
-                                marker.bindPopup(popupContent);
-
-                                zone.addTo(allSchoolsLayer);
-                                marker.addTo(allSchoolsLayer);
-                            });
-                        }
-                    });
-                }
-            });
-
-            // Prevenir que clics en el control afecten el mapa
-            L.DomEvent.disableClickPropagation(div);
-
-            return div;
-        };
-        filterControl.addTo(map);
 
         // Panel de estadísticas
         const stats = L.control({ position: 'bottomleft' });
