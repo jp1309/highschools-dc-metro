@@ -953,28 +953,6 @@
         // ============================================
 
 
-        // Panel de información
-        const info = L.control({ position: 'topright' });
-        info.onAdd = function (map) {
-            const div = L.DomUtil.create('div', 'info-panel');
-            div.innerHTML = `
-                <h4>🏫 High Schools DC Metro</h4>
-                <p><strong>Total de escuelas:</strong> ${highSchools.length}</p>
-                <p style="margin-top: 10px; font-size: 11px; color: #1a9850;">
-                    <strong>✓ Boundaries Oficiales</strong>
-                </p>
-                <p style="margin-top: 5px; font-size: 10px;">
-                    <em>Haz clic en una zona o marcador para ver detalles de la escuela.</em>
-                </p>
-                <p style="margin-top: 5px; font-size: 10px; color: #888;">
-                    Datos: GreatSchools.org (Enero 2026)<br>
-                    Boundaries: Fairfax, Montgomery, Arlington, Alexandria, Prince George
-                </p>
-            `;
-            return div;
-        };
-        info.addTo(map);
-
         // Leyenda de colores
         const legend = L.control({ position: 'bottomright' });
         legend.onAdd = function (map) {
