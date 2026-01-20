@@ -934,18 +934,18 @@
             });
         }
 
-        // Colores por rating (gradiente de rojo a verde)
+        // Colores por rating (6 rangos: 10, 8-9, 6-7, 4-5, 2-3, 1)
         const ratingColors = {
-            1: '#d73027',  // Rojo oscuro
-            2: '#e45a3b',  // Rojo
-            3: '#f17c4a',  // Rojo-naranja
-            4: '#fc8d59',  // Naranja
-            5: '#fed686',  // Naranja-amarillo
-            6: '#fee08b',  // Amarillo
-            7: '#d4e986',  // Amarillo-verde
-            8: '#a6d96a',  // Verde claro
-            9: '#66bd63',  // Verde
-            10: '#1a9850'   // Verde oscuro
+            1: '#d73027',   // Rojo intenso
+            2: '#fc8d59',   // Rojo-naranja
+            3: '#fc8d59',   // Rojo-naranja
+            4: '#fee08b',   // Amarillo-naranja
+            5: '#fee08b',   // Amarillo-naranja
+            6: '#d9ef8b',   // Amarillo-verde
+            7: '#d9ef8b',   // Amarillo-verde
+            8: '#91cf60',   // Verde claro
+            9: '#91cf60',   // Verde claro
+            10: '#1a9850'   // Verde fuerte
         };
 
         // ============================================
@@ -953,19 +953,25 @@
         // ============================================
 
 
-        // Leyenda de colores
+        // Leyenda de colores (6 rangos)
         const legend = L.control({ position: 'bottomright' });
         legend.onAdd = function (map) {
             const div = L.DomUtil.create('div', 'legend');
-            const grades = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+            const ranges = [
+                { range: '10', color: ratingColors[10], label: '10 (Excelente)' },
+                { range: '8-9', color: ratingColors[9], label: '8-9' },
+                { range: '6-7', color: ratingColors[7], label: '6-7' },
+                { range: '4-5', color: ratingColors[5], label: '4-5' },
+                { range: '2-3', color: ratingColors[3], label: '2-3' },
+                { range: '1', color: ratingColors[1], label: '1 (Muy bajo)' }
+            ];
 
             div.innerHTML = '<div class="legend-title">Calificación GS</div>';
 
-            for (let i = 0; i < grades.length; i++) {
+            for (let i = 0; i < ranges.length; i++) {
                 div.innerHTML +=
-                    '<i style="background:' + ratingColors[grades[i]] + '"></i> ' +
-                    grades[i] + (grades[i] >= 9 ? ' (Excelente)' :
-                        grades[i] <= 2 ? ' (Muy bajo)' : '') + '<br>';
+                    '<i style="background:' + ranges[i].color + '"></i> ' +
+                    ranges[i].label + '<br>';
             }
 
             return div;
