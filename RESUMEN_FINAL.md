@@ -5,7 +5,7 @@
 
 ---
 
-## Total de Escuelas: 77
+## Total de Escuelas: 84
 
 ### Por Jurisdicción:
 
@@ -14,11 +14,11 @@
 - Todas con boundaries oficiales
 - Ratings: 2-9/10
 
-#### 2. Montgomery County, MD - 18 escuelas
+#### 2. Montgomery County, MD - 25 escuelas ⭐ AMPLIADO
 - Archivo GeoJSON: montgomery_hs_boundaries.geojson (1.4MB)
 - Todas con boundaries oficiales
 - Ratings: 3-9/10
-- Incluye: Albert Einstein HS (agregado hoy)
+- Incluye: Albert Einstein HS + 7 escuelas adicionales agregadas hoy
 
 #### 3. Prince George's County, MD - 21 escuelas ⭐ NUEVO
 - Archivo GeoJSON: princegeorge_hs_boundaries.geojson (4.5MB)
