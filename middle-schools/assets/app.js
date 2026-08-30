@@ -49,6 +49,7 @@
     grade: document.querySelector("#grades-filter"),
     rating: document.querySelector("#rating-filter"),
     toggleBoundaries: document.querySelector("#toggle-boundaries"),
+    togglePoints: document.querySelector("#toggle-points"),
     list: document.querySelector("#school-list"),
     listCount: document.querySelector("#list-count"),
     empty: document.querySelector("#empty-state"),
@@ -535,14 +536,19 @@
   function focusSchool(school) {
     const record = state.pointRecords.find((item) => item.school.id === school.id);
     if (!record) return;
+    if (!elements.togglePoints.checked) {
+      elements.togglePoints.checked = true;
+      updateView();
+    }
     state.map.setView([school.lat, school.lng], Math.max(state.map.getZoom(), 13));
     record.layer.openPopup();
   }
 
   function updateView() {
     const visibleSchools = state.schools.filter(schoolMatches);
+    const showPoints = elements.togglePoints.checked;
     const showBoundaries = elements.toggleBoundaries.checked;
-    for (const record of state.pointRecords) syncLayer(state.pointGroup, record.layer, schoolMatches(record.school));
+    for (const record of state.pointRecords) syncLayer(state.pointGroup, record.layer, showPoints && schoolMatches(record.school));
     for (const record of state.boundaryRecords) syncLayer(state.boundaryGroup, record.layer, showBoundaries && boundaryMatches(record));
     renderList(visibleSchools);
     elements.kpiVisible.textContent = visibleSchools.length.toLocaleString("es");
@@ -585,6 +591,7 @@
       updateView();
     });
     elements.toggleBoundaries.addEventListener("change", updateView);
+    elements.togglePoints.addEventListener("change", updateView);
     elements.filters.addEventListener("reset", () => {
       window.setTimeout(() => {
         state.filters = { query: "", jurisdiction: "", schoolType: "", grade: "", minRating: 0 };

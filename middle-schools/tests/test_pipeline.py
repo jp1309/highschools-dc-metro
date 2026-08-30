@@ -141,6 +141,15 @@ class MiddleSchoolPipelineTests(unittest.TestCase):
         self.assertEqual(parse_grades("K-12"), (0, 12, True))
         self.assertEqual(parse_grades("4-6"), (4, 6, True))
 
+    def test_point_layer_can_be_toggled_and_restored_from_the_school_list(self):
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        javascript = (ROOT / "assets" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('id="toggle-points"', html)
+        self.assertIn('togglePoints: document.querySelector("#toggle-points")', javascript)
+        self.assertIn("showPoints && schoolMatches(record.school)", javascript)
+        self.assertIn("elements.togglePoints.checked = true", javascript)
+        self.assertIn('elements.togglePoints.addEventListener("change", updateView)', javascript)
+
     def test_unapproved_location_source_is_rejected_without_mutation(self):
         registry_path = ROOT / "data" / "school-locations.json"
         before = registry_path.read_bytes()
