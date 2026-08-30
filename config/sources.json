@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "fairfax_high_school_attendance_areas",
+      "jurisdiction": "Fairfax County, VA",
+      "authority": "Fairfax County GIS",
+      "query_url": "https://services1.arcgis.com/ioennV6PpG5Xodq0/ArcGIS/rest/services/OpenData_S1/FeatureServer/12/query",
+      "output": "fairfax_hs_boundaries.geojson",
+      "enabled": true,
+      "name_field": "SCHOOL_NAME",
+      "year_field": "SCH_YR",
+      "expected_year": "2025_26",
+      "expected_features": 24,
+      "boundary_type": "attendance_zone"
+    },
+    {
+      "id": "montgomery_mcps_high_school_areas",
+      "jurisdiction": "Montgomery County, MD",
+      "authority": "Montgomery County GeoHub / MCPS",
+      "query_url": "https://geohub.montgomerycountymd.gov/mapping2/rest/services/Boundaries/MCPS_High_School_Areas/FeatureServer/0/query",
+      "output": "montgomery_hs_boundaries.geojson",
+      "enabled": true,
+      "name_field": "S_NAME",
+      "year_field": "SCHOOLYEAR",
+      "expected_year": "2026-2027",
+      "expected_features": 25,
+      "boundary_type": "attendance_zone"
+    },
+    {
+      "id": "dc_senior_high_attendance_zones",
+      "jurisdiction": "Washington, DC",
+      "authority": "DC GIS Open Data",
+      "query_url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Education_WebMercator/MapServer/15/query",
+      "output": "DC.geojson",
+      "enabled": true,
+      "name_field": "NAME",
+      "year_field": null,
+      "expected_year": null,
+      "expected_features": 10,
+      "boundary_type": "attendance_zone"
+    },
+    {
+      "id": "arlington_high_school_boundaries_snapshot",
+      "jurisdiction": "Arlington, VA",
+      "authority": "Arlington County GIS snapshot",
+      "query_url": null,
+      "output": "arlington_hs_boundaries.geojson",
+      "enabled": false,
+      "name_field": "HS_Name",
+      "year_field": "School_Year",
+      "expected_year": "2022-2023",
+      "expected_features": 3,
+      "boundary_type": "attendance_zone",
+      "note": "A current authoritative download endpoint still needs to be verified."
+    },
+    {
+      "id": "prince_georges_high_school_boundaries_snapshot",
+      "jurisdiction": "Prince George's County, MD",
+      "authority": "Repository snapshot; authoritative endpoint pending",
+      "query_url": null,
+      "output": "princegeorge_hs_boundaries.geojson",
+      "enabled": false,
+      "name_field": "NAME",
+      "year_field": null,
+      "expected_year": null,
+      "expected_features": 21,
+      "boundary_type": "attendance_zone",
+      "note": "Do not refresh automatically until PGCPS provenance and school year are confirmed."
+    },
+    {
+      "id": "alexandria_city_boundary_snapshot",
+      "jurisdiction": "Alexandria City, VA",
+      "authority": "Repository municipal boundary snapshot",
+      "query_url": null,
+      "output": "Alexandria.geojson",
+      "enabled": false,
+      "name_field": "NAME",
+      "year_field": null,
+      "expected_year": null,
+      "expected_features": 1,
+      "boundary_type": "municipal_boundary",
+      "note": "This is a city limit, not a school attendance boundary."
+    },
+    {
+      "id": "falls_church_city_boundary",
+      "jurisdiction": "Falls Church City, VA",
+      "authority": "City of Falls Church GIS / VGIN",
+      "query_url": "https://services1.arcgis.com/2hmXRAz4ofcdQP6p/arcgis/rest/services/Jurisdictional_Boundary/FeatureServer/0/query",
+      "where": "STCOFIPS='51610'",
+      "output": "falls_church_city_boundary.geojson",
+      "enabled": true,
+      "name_field": "NAME",
+      "year_field": null,
+      "expected_year": null,
+      "expected_features": 1,
+      "boundary_type": "municipal_boundary",
+      "note": "Official jurisdictional boundary filtered by the City of Falls Church FIPS code; this is not a school attendance zone."
+    }
+  ]
+}

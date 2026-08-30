@@ -1,147 +1,296 @@
-# Mapa de Calificaciones de High Schools - Washington DC Metro
+# High Schools del área de Washington, DC
 
-Visualización interactiva de las calificaciones de high schools públicas en el área metropolitana de Washington DC.
+[Ver el mapa publicado](https://jp1309.github.io/highschools-dc-metro/) ·
+[Estado de validación](https://github.com/jp1309/highschools-dc-metro/actions/workflows/validate.yml)
 
-## Contenido
+Mapa estático para explorar 84 high schools públicas y las capas geográficas
+disponibles en siete jurisdicciones del área de Washington, DC. Combina puntos
+de escuelas, calificaciones declaradas y boundaries publicados por autoridades
+locales o conservados como snapshots del repositorio.
 
-- [index.html](index.html) - Archivo principal con la visualización (Boundaries Oficiales)
-- [index_basic.html](index_basic.html) - Versión simplificada con polígonos aproximados
+El mapa es una herramienta exploratoria. **No confirma la escuela asignada a
+una dirección, no garantiza elegibilidad de matrícula y no debe usarse como
+única base para decisiones de vivienda.** Verifique siempre con el distrito
+escolar correspondiente.
 
-## Jurisdicciones Incluidas
+## Qué mejoró esta versión
 
-| Jurisdicción | # Escuelas |
-|--------------|------------|
-| Arlington, VA | 4 |
-| Fairfax County, VA | 26 |
-| Falls Church City, VA | 1 |
+- separa HTML, estilos, lógica y datos;
+- usa IDs estables y una unión explícita por crosswalk, sin coincidencias
+  parciales de nombres durante la carga;
+- distingue zonas de asistencia de límites municipales;
+- no fabrica polígonos para escuelas sin boundary confirmado;
+- muestra fuente, vigencia y limitaciones en la interfaz;
+- valida contratos, geometrías, referencias y jurisdicciones antes de publicar;
+- incluye un proceso controlado para comprobar y actualizar fuentes oficiales.
+
+## Alcance actual
+
+`data/schools.json` contiene 84 escuelas:
+
+| Jurisdicción | Escuelas |
+|---|---:|
 | Alexandria City, VA | 1 |
-| Montgomery County, MD | 13 |
-| Prince George's County, MD | 7 |
-| Washington, DC | 19 |
-| **Total** | **71** |
+| Arlington, VA | 3 |
+| Fairfax County, VA | 23 |
+| Falls Church City, VA | 1 |
+| Montgomery County, MD | 25 |
+| Prince George's County, MD | 21 |
+| Washington, DC | 10 |
+| **Total** | **84** |
 
-## Escala de Colores
+Este universo es una selección heredada del repositorio original, no una lista
+completa de todas las high schools del área metropolitana. No incluye, por
+ejemplo, todos los distritos que forman parte de la región. Las escuelas magnet,
+charter, alternativas o sin attendance zone tradicional requieren un tratamiento
+específico y pueden estar ausentes.
 
-| Calificación | Color | Descripción |
-|--------------|-------|-------------|
-| 9-10 | Verde oscuro (#1a9850) | Excelente |
-| 7-8 | Verde claro (#91cf60) | Por encima del promedio |
-| 5-6 | Amarillo (#fee08b) | Promedio |
-| 3-4 | Naranja (#fc8d59) | Por debajo del promedio |
-| 1-2 | Rojo (#d73027) | Muy por debajo del promedio |
+El crosswalk actual cubre 85 features: 84 asociaciones explícitas y una feature
+de Centreville conservada como no asociada porque no existe un registro de esa
+escuela en `schools.json`. Dos asociaciones —Alexandria City High School y
+Meridian High School— usan límites municipales, no zonas de asistencia. En
+términos estrictos, 82 de las 84 escuelas tienen una zona oficial de asistencia;
+las otras dos tienen contexto municipal oficial.
 
-## Cómo Actualizar los Datos
+## Fuentes geográficas y vigencia
 
-### 1. Obtener Nuevas Calificaciones
+| Capa publicada | Features | Vigencia declarada | Tipo | Estado de actualización |
+|---|---:|---|---|---|
+| Fairfax County, VA | 24 | 2025–2026 | zona de asistencia | endpoint oficial configurado |
+| Montgomery County, MD | 25 | 2026–2027 | zona de asistencia | endpoint oficial verificado y snapshot actualizado |
+| Arlington, VA | 3 | 2022–2023 | zona de asistencia | snapshot; endpoint autoritativo pendiente |
+| Prince George's County, MD | 21 | desconocida | zona de asistencia | snapshot; procedencia/vigencia pendiente |
+| Alexandria City, VA | 1 | desconocida | **límite municipal** | snapshot; no es attendance boundary |
+| Falls Church City, VA | 1 | no aplica | **límite municipal** | endpoint oficial configurado; filtro FIPS 51610 |
+| Washington, DC | 10 | no indicada en la capa | zona de asistencia | endpoint oficial configurado |
 
-Las calificaciones provienen de **GreatSchools.org**. Para actualizar:
+Las fuentes verificadas para actualización están declaradas en
+`config/sources.json`:
 
-1. Visitar `https://www.greatschools.org/[estado]/[ciudad]/schools/?gradeLevels%5B%5D=h&st%5B%5D=public`
+- Fairfax County GIS, `OpenData_S1/FeatureServer/12`;
+- Montgomery County GeoHub / MCPS,
+  `MCPS_High_School_Areas/FeatureServer/0`;
+- DC GIS Open Data, `Education_WebMercator/MapServer/15`.
+- City of Falls Church GIS / VGIN,
+  `Jurisdictional_Boundary/FeatureServer/0`, filtrado por `STCOFIPS=51610`.
 
-   Ejemplos:
-   - Virginia/Arlington: `https://www.greatschools.org/virginia/arlington/schools/?gradeLevels%5B%5D=h&st%5B%5D=public`
-   - Maryland/Bethesda: `https://www.greatschools.org/maryland/bethesda/schools/?gradeLevels%5B%5D=h&st%5B%5D=public`
-   - DC: `https://www.greatschools.org/washington-dc/washington/schools/?gradeLevels%5B%5D=h&st%5B%5D=public`
+Una URL accesible o una respuesta HTTP 200 no prueba vigencia. El proceso exige
+el conteo esperado, nombres únicos y, donde existe, el año escolar esperado.
+Arlington, Prince George's y Alexandria permanecen deshabilitados para refresh
+automático hasta verificar una fuente autoritativa adecuada. Falls Church está
+habilitado, pero se publica como contexto municipal y nunca como zona escolar.
 
-2. Anotar el nombre, dirección y calificación (1-10) de cada escuela.
+## Estado y actualización de las calificaciones
 
-### 2. Obtener Coordenadas
+Las 84 calificaciones actuales proceden del libro
+`lista_84_escuelas_greatschools.xlsx` proporcionado por el usuario. La entrega
+incluye `school_id`, URL individual, score 1–10, fecha de consulta y estado
+verificado para cada escuela. La actualización del 30 de agosto de 2026 cubre
+84 de 84 escuelas; su hash y la evidencia fila por fila se conservan en
+`data/rating-evidence.json`. El archivo original exacto queda preservado en
+`outputs/ratings-manual-20260830/lista_84_escuelas_greatschools.xlsx` y el
+validador comprueba su SHA-256 antes de publicar.
 
-Para nuevas escuelas, obtener coordenadas usando:
+Los [Términos de uso de GreatSchools](https://www.greatschools.org/gk/terms/)
+prohíben el web scraping, harvesting y extraction. Este proyecto no visita ni
+extrae automáticamente páginas de GreatSchools. Un refresh solo puede usar una
+API, feed o exportación entregada con autorización y dentro del alcance de la
+licencia correspondiente. La disponibilidad de una API no concede por sí sola
+derecho a reutilizar o redistribuir sus datos.
 
-- **Google Maps**: Buscar la dirección, clic derecho en el marcador, copiar coordenadas
-- **Nominatim (OpenStreetMap)**: `https://nominatim.openstreetmap.org/search?q=[direccion]&format=json`
+El contrato distingue tres estados:
 
-### 3. Modificar el Archivo HTML
+- `verified`: rating 1–10 respaldado por evidencia completa de una entrega
+  autorizada o una verificación manual proporcionada por el usuario;
+- `not_available`: la entrega autorizada cubrió la escuela, pero no proporcionó
+  un rating; se publica `rating: null`;
+- `legacy_unverified`: valor heredado sin evidencia por escuela.
 
-Editar el array `highSchools` en `index.html`:
+La escala visual usa cinco rangos consistentes en puntos y límites: 9–10 verde
+intenso (`#1a9850`), 7–8 verde (`#91cf60`), 5–6 amarillo (`#fee08b`), 3–4
+naranja (`#fc8d59`) y 1–2 rojo intenso (`#d73027`). El gris (`#727a80`) queda
+reservado para una escuela sin rating. Los límites municipales conservan el
+color del score y se diferencian mediante un borde discontinuo.
 
-```javascript
-const highSchools = [
-    {
-        name: "Nombre de la Escuela",
-        address: "Dirección completa",
-        rating: 8,  // Calificación 1-10
-        lat: 38.9072,  // Latitud
-        lng: -77.0369,  // Longitud
-        jurisdiction: "Jurisdicción"
-    },
-    // ... más escuelas
-];
+`scripts/import_authorized_ratings.py` materializa una entrega autorizada. El
+script no aplica cambios salvo que se use `--apply`, se confirme explícitamente
+la licencia con `--license-confirmed` y la entrega cubra exactamente las 84
+escuelas. Un bloqueo, error de red, error de parseo o identidad ambigua no se
+convierte en `not_available`: el refresh falla y conserva intactos los datos
+publicados.
+
+Cada actualización aceptada escribe `data/rating-evidence.json`, con una
+referencia individual desde cada escuela. `rating_as_of` conserva únicamente el
+año o mes que declare la fuente (`YYYY`, `YYYY-MM` o `null`); no se inventa un
+mes. `rating_checked_at` registra por separado el instante UTC en que se procesó
+la entrega.
+
+El método de esta actualización es `user_supplied_manual_verification`: el
+pipeline no visitó las fichas ni extrajo scores; materializó y validó el libro
+entregado por el usuario. Este método se mantiene separado de
+`authorized_bulk_feed` para no confundir su procedencia.
+
+## Arquitectura de datos
+
+```text
+fuentes GIS oficiales/snapshots       ratings con procedencia documentada
+              |                                  |
+              v                                  v
+     GeoJSON en la raíz           feed autorizado o tabla del usuario
+              |                                  |
+              v                                  v
+ data/boundary-manifest.json      data/rating-evidence.json
+              |                                  |
+ data/boundary-crosswalk.json     data/schools.json
+              |                                  |
+              +---------------+------------------+
+                              v
+                    scripts/validate_data.py
+                              |
+                              v
+                   index.html + assets/app.js
 ```
 
-### 4. Jurisdicciones Válidas
+- `data/schools.json`: escuela, punto y estado materializado de su calificación.
+- `data/rating-evidence.json`: evidencia individual de una entrega autorizada
+  o tabla manual proporcionada por el usuario que respalda los ratings.
+- `data/boundary-manifest.json`: archivo, jurisdicción, campo de nombre,
+  vigencia y tipo de cada capa.
+- `data/boundary-crosswalk.json`: relación feature → `school_id`, o estado no
+  asociado con una razón.
+- `config/sources.json`: endpoints y expectativas para un refresh controlado.
+- `config/rating-sources.json`: fuentes, métodos y condiciones autorizadas para
+  importar ratings; no contiene credenciales.
+- `scripts/refresh_boundaries.py`: descarga y valida todas las fuentes
+  habilitadas antes de reemplazar archivos; sin `--apply` solo comprueba.
+- `scripts/import_authorized_ratings.py`: valida y materializa únicamente feeds
+  o exports autorizados con cobertura completa.
+- `scripts/validate_data.py`: puerta de calidad para los artefactos publicados.
+- `tests/`: pruebas de regresión con `unittest`.
 
-Usar exactamente estos nombres para mantener consistencia:
-- `"Arlington, VA"`
-- `"Fairfax County, VA"`
-- `"Falls Church City, VA"`
-- `"Alexandria City, VA"`
-- `"Montgomery County, MD"`
-- `"Prince George's County, MD"`
-- `"Washington, DC"`
+Consulte [el diccionario de datos](docs/DATA_DICTIONARY.md) y
+[la metodología](docs/METHODOLOGY.md) para los contratos y decisiones de
+procedencia.
 
-## Fuentes de Datos Adicionales
+## Ejecución local
 
-### Boundaries Oficiales (GeoJSON)
+Requisitos: Python 3 y un navegador moderno. No hay dependencias Python de
+terceros para validar ni servir el proyecto.
 
-Para obtener boundaries oficiales de attendance zones:
+En PowerShell:
 
-| Jurisdicción | URL |
-|--------------|-----|
-| Fairfax County | https://data-fairfaxcountygis.opendata.arcgis.com/ |
-| Montgomery County | https://gis.mcpsmd.org/ |
-| Prince George's County | https://gis.pgcps.org/ |
-| Washington DC | https://opendata.dc.gov/ |
-| Arlington | https://gisdata-arlgis.opendata.arcgis.com/ |
-
-### Calificaciones Alternativas
-
-- **Virginia School Quality Profiles**: https://schoolquality.virginia.gov/
-- **Maryland Report Card**: https://reportcard.msde.maryland.gov/
-- **DC School Report Card**: https://dcschoolreportcard.org/
-
-### API de GreatSchools
-
-Para automatización, GreatSchools ofrece una API de pago:
-- Registro: https://www.greatschools.org/api
-- Documentación: https://www.greatschools.org/gk/wp-content/uploads/2023/05/GreatSchools-API-Technical-Documentation.pdf
-
-## Limitaciones Actuales
-
-1. **Boundaries aproximados**: Los polígonos son hexágonos aproximados, no los boundaries oficiales de attendance zones. Para boundaries precisos, se necesitaría integrar datos GeoJSON de cada jurisdicción.
-
-2. **Escuelas alternativas**: Algunas escuelas alternativas o magnet schools pueden no tener una zona de attendance tradicional.
-
-3. **Actualización manual**: Los datos requieren actualización manual; GreatSchools actualiza sus calificaciones anualmente.
-
-## Mejoras Futuras
-
-Para integrar boundaries oficiales:
-
-```javascript
-// Ejemplo de carga de GeoJSON
-fetch('https://url-del-geojson/boundaries.geojson')
-    .then(response => response.json())
-    .then(data => {
-        L.geoJSON(data, {
-            style: function(feature) {
-                const rating = getRatingForSchool(feature.properties.school_name);
-                return {
-                    fillColor: getRatingColor(rating),
-                    fillOpacity: 0.5,
-                    color: getRatingColor(rating),
-                    weight: 2
-                };
-            }
-        }).addTo(map);
-    });
+```powershell
+git clone https://github.com/jp1309/highschools-dc-metro.git
+cd highschools-dc-metro
+py -3 scripts/validate_data.py
+py -3 -m unittest discover -s tests -v
+py -3 -m http.server 8000
 ```
 
-## Licencia
+Abra `http://localhost:8000/`. El sitio usa `fetch()` y debe servirse por HTTP;
+abrir `index.html` mediante `file://` no es una prueba válida.
 
-Los datos de calificaciones son propiedad de GreatSchools.org. El código de visualización es de dominio público.
+En Linux o macOS, sustituya `py -3` por `python3`.
 
----
+## Validación
 
-Última actualización: Enero 2026
+La validación comprueba, entre otras reglas:
+
+- esquema, tipos, IDs únicos y campos obligatorios de escuelas;
+- calificaciones, estados y coordenadas dentro de rangos válidos;
+- coherencia entre rating, URL, vigencia, fecha de consulta, método y evidencia;
+- cobertura completa y referencias uno-a-uno de la evidencia de ratings;
+- existencia, estructura y geometrías básicas de cada GeoJSON declarado;
+- cobertura exacta del crosswalk sobre las features publicadas;
+- referencias a IDs existentes y consistencia de jurisdicción;
+- razones explícitas para features no asociadas.
+
+Ejecute siempre:
+
+```powershell
+py -3 scripts/validate_data.py
+py -3 -m unittest discover -s tests -v
+git diff --check
+```
+
+GitHub Actions repite la validación, las pruebas y la construcción del artifact
+estático en cada push y pull request.
+
+### Importar ratings autorizados
+
+Obtenga primero una API, feed o exportación cuya licencia permita expresamente
+este uso y revise las opciones del importador:
+
+```powershell
+py -3 scripts/import_authorized_ratings.py --help
+py -3 scripts/import_authorized_ratings.py --input C:\secure\authorized-ratings.csv
+```
+
+La segunda orden es una vista previa y no escribe. Solo después de revisar que
+las 84 escuelas están resueltas, aplique la misma entrega:
+
+```powershell
+py -3 scripts/import_authorized_ratings.py --input C:\secure\authorized-ratings.csv --apply --license-confirmed
+py -3 scripts/validate_data.py
+py -3 -m unittest discover -s tests -v
+```
+
+Ambos flags son necesarios; la confirmación declara que el operador verificó la
+licencia, no sustituye esa verificación.
+
+## Actualizar boundaries
+
+Primero compruebe las fuentes habilitadas sin modificar el repositorio:
+
+```powershell
+py -3 scripts/refresh_boundaries.py
+```
+
+Revise conteos, años y cambios esperados. Para aplicar todas las descargas
+validadas:
+
+```powershell
+py -3 scripts/refresh_boundaries.py --apply
+py -3 scripts/validate_data.py
+py -3 -m unittest discover -s tests -v
+```
+
+`--apply` reemplaza los archivos habilitados solo después de que todas las
+descargas superen sus controles y escribe evidencia de la comprobación en
+`data/source-snapshot.json`. Si cambian nombres o features, actualice el
+manifiesto y el crosswalk de forma explícita; nunca añada matching difuso al
+frontend.
+
+## Publicación
+
+El repositorio publica mediante GitHub Actions. `.github/workflows/pages.yml`
+valida el repositorio, ejecuta las pruebas, genera `_site` y despliega el
+artifact oficial de Pages. El workflow `Validate` repite los controles en cada
+push y pull request.
+
+El despliegue se detiene si falla el validador o cualquier prueba.
+
+## Limitaciones conocidas
+
+- La cobertura geográfica y escolar no equivale a toda la región metropolitana.
+- Las 84 calificaciones tienen URL individual y evidencia de la entrega manual
+  proporcionada por el usuario, fechada el 30 de agosto de 2026.
+- Las capas tienen vigencias diferentes; tres continúan como snapshots sin
+  refresh autoritativo confirmado.
+- Alexandria y Falls Church muestran contexto municipal, no asignación escolar.
+- Un punto de escuela puede estar desactualizado o fuera de la zona que el
+  usuario espera; no demuestra asignación de una dirección.
+- La validación prueba consistencia interna, no certifica la actualidad de una
+  autoridad externa.
+- Los GeoJSON de origen son grandes; la optimización geométrica sigue pendiente
+  y debe preservar una copia auditable de la fuente.
+
+## Contribuir y licencias
+
+Lea [CONTRIBUTING.md](CONTRIBUTING.md) antes de modificar datos o fuentes.
+
+El código se distribuye bajo la [licencia MIT](LICENSE). Los GeoJSON,
+calificaciones, nombres, marcas y otros datos externos **no quedan relicenciados
+por MIT**: conservan los términos, licencias y requisitos de atribución de sus
+respectivos proveedores. Verifique esos términos antes de reutilizar o
+redistribuir los datos.

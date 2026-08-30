@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-29T14:22:43.541732+00:00",
+  "sources": [
+    {
+      "id": "fairfax_high_school_attendance_areas",
+      "output": "fairfax_hs_boundaries.geojson",
+      "query_url": "https://services1.arcgis.com/ioennV6PpG5Xodq0/ArcGIS/rest/services/OpenData_S1/FeatureServer/12/query",
+      "where": "1=1",
+      "authority": "Fairfax County GIS",
+      "checked_at": "2026-08-29T14:22:41.974306+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "features": 24,
+      "year_values": [
+        "2025_26"
+      ],
+      "sha256": "cf49e23cf7adeac9b30999982a9b2556611674debff3802f19591ea92c80f143",
+      "bytes": 2410839,
+      "refresh_enabled": true
+    },
+    {
+      "id": "montgomery_mcps_high_school_areas",
+      "output": "montgomery_hs_boundaries.geojson",
+      "query_url": "https://geohub.montgomerycountymd.gov/mapping2/rest/services/Boundaries/MCPS_High_School_Areas/FeatureServer/0/query",
+      "where": "1=1",
+      "authority": "Montgomery County GeoHub / MCPS",
+      "checked_at": "2026-08-29T14:22:42.738439+00:00",
+      "http_status": 200,
+      "content_type": "application/geo+json; charset=UTF-8",
+      "features": 25,
+      "year_values": [
+        "2026-2027"
+      ],
+      "sha256": "91e7e51a115d3d720a1c52dd83535d9d142d24a1ddfa1907ba910ef31f013668",
+      "bytes": 1311134,
+      "refresh_enabled": true
+    },
+    {
+      "id": "dc_senior_high_attendance_zones",
+      "output": "DC.geojson",
+      "query_url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Education_WebMercator/MapServer/15/query",
+      "where": "1=1",
+      "authority": "DC GIS Open Data",
+      "checked_at": "2026-08-29T14:22:43.240158+00:00",
+      "http_status": 200,
+      "content_type": "application/geo+json; charset=UTF-8",
+      "features": 10,
+      "year_values": [],
+      "sha256": "95dff5d152a658a1fa148bdf7b61b3e3915195f86610b43e15e9754d12a5e4f3",
+      "bytes": 775550,
+      "refresh_enabled": true
+    },
+    {
+      "id": "arlington_high_school_boundaries_snapshot",
+      "output": "arlington_hs_boundaries.geojson",
+      "query_url": null,
+      "where": "1=1",
+      "authority": "Arlington County GIS snapshot",
+      "checked_at": null,
+      "http_status": null,
+      "features": 3,
+      "year_values": [
+        "2022-2023"
+      ],
+      "sha256": "a50c3fc815bda25492f1a43530e32f895f3d81258541ba1dde8350c1e3ba0957",
+      "bytes": 556855,
+      "refresh_enabled": false,
+      "note": "A current authoritative download endpoint still needs to be verified."
+    },
+    {
+      "id": "prince_georges_high_school_boundaries_snapshot",
+      "output": "princegeorge_hs_boundaries.geojson",
+      "query_url": null,
+      "where": "1=1",
+      "authority": "Repository snapshot; authoritative endpoint pending",
+      "checked_at": null,
+      "http_status": null,
+      "features": 21,
+      "year_values": [],
+      "sha256": "481b6aca19591b9659a60b2ef72498d6202bec3b4671f9486cefb91eef2bf8e2",
+      "bytes": 4686193,
+      "refresh_enabled": false,
+      "note": "Do not refresh automatically until PGCPS provenance and school year are confirmed."
+    },
+    {
+      "id": "alexandria_city_boundary_snapshot",
+      "output": "Alexandria.geojson",
+      "query_url": null,
+      "where": "1=1",
+      "authority": "Repository municipal boundary snapshot",
+      "checked_at": null,
+      "http_status": null,
+      "features": 1,
+      "year_values": [],
+      "sha256": "801fade368d777b7a81449845841237ac0281355a4c4cfc9669237375f283339",
+      "bytes": 99947,
+      "refresh_enabled": false,
+      "note": "This is a city limit, not a school attendance boundary."
+    },
+    {
+      "id": "falls_church_city_boundary",
+      "output": "falls_church_city_boundary.geojson",
+      "query_url": "https://services1.arcgis.com/2hmXRAz4ofcdQP6p/arcgis/rest/services/Jurisdictional_Boundary/FeatureServer/0/query",
+      "where": "STCOFIPS='51610'",
+      "authority": "City of Falls Church GIS / VGIN",
+      "checked_at": "2026-08-29T14:22:43.519643+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "features": 1,
+      "year_values": [],
+      "sha256": "e208c791e77cf1930b054d64b1aa3d0fc8991fcc7dacc84208c1987a3e56e61f",
+      "bytes": 22168,
+      "refresh_enabled": true
+    }
+  ]
+}

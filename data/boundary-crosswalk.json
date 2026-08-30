@@ -1,0 +1,463 @@
+[
+  {
+    "path": "fairfax_hs_boundaries.geojson",
+    "mappings": [
+      {
+        "feature_name": "Annandale",
+        "status": "matched",
+        "school_id": "fairfax_county_va:annandale_high_school"
+      },
+      {
+        "feature_name": "Centreville",
+        "status": "unmatched",
+        "school_id": null,
+        "reason": "No Centreville school record exists in data/schools.json; the source feature is retained explicitly without a guessed match."
+      },
+      {
+        "feature_name": "Chantilly",
+        "status": "matched",
+        "school_id": "fairfax_county_va:chantilly_high_school"
+      },
+      {
+        "feature_name": "Edison",
+        "status": "matched",
+        "school_id": "fairfax_county_va:edison_high_school"
+      },
+      {
+        "feature_name": "Fairfax",
+        "status": "matched",
+        "school_id": "fairfax_county_va:fairfax_high_school"
+      },
+      {
+        "feature_name": "Falls Church",
+        "status": "matched",
+        "school_id": "fairfax_county_va:falls_church_high_school"
+      },
+      {
+        "feature_name": "Hayfield",
+        "status": "matched",
+        "school_id": "fairfax_county_va:hayfield_secondary"
+      },
+      {
+        "feature_name": "Herndon",
+        "status": "matched",
+        "school_id": "fairfax_county_va:herndon_high_school"
+      },
+      {
+        "feature_name": "Justice",
+        "status": "matched",
+        "school_id": "fairfax_county_va:justice_high_school"
+      },
+      {
+        "feature_name": "Lake Braddock",
+        "status": "matched",
+        "school_id": "fairfax_county_va:lake_braddock_secondary"
+      },
+      {
+        "feature_name": "Langley",
+        "status": "matched",
+        "school_id": "fairfax_county_va:langley_high_school"
+      },
+      {
+        "feature_name": "Lewis",
+        "status": "matched",
+        "school_id": "fairfax_county_va:john_r_lewis_high_school"
+      },
+      {
+        "feature_name": "Madison",
+        "status": "matched",
+        "school_id": "fairfax_county_va:madison_high_school"
+      },
+      {
+        "feature_name": "Marshall",
+        "status": "matched",
+        "school_id": "fairfax_county_va:marshall_high_school"
+      },
+      {
+        "feature_name": "Mount Vernon",
+        "status": "matched",
+        "school_id": "fairfax_county_va:mount_vernon_high_school"
+      },
+      {
+        "feature_name": "Oakton",
+        "status": "matched",
+        "school_id": "fairfax_county_va:oakton_high_school"
+      },
+      {
+        "feature_name": "Robinson",
+        "status": "matched",
+        "school_id": "fairfax_county_va:robinson_secondary"
+      },
+      {
+        "feature_name": "South County",
+        "status": "matched",
+        "school_id": "fairfax_county_va:south_county_high_school"
+      },
+      {
+        "feature_name": "South Lakes",
+        "status": "matched",
+        "school_id": "fairfax_county_va:south_lakes_high_school"
+      },
+      {
+        "feature_name": "West Potomac",
+        "status": "matched",
+        "school_id": "fairfax_county_va:west_potomac_high_school"
+      },
+      {
+        "feature_name": "West Springfield",
+        "status": "matched",
+        "school_id": "fairfax_county_va:west_springfield_high_school"
+      },
+      {
+        "feature_name": "Westfield",
+        "status": "matched",
+        "school_id": "fairfax_county_va:westfield_high_school"
+      },
+      {
+        "feature_name": "Woodson",
+        "status": "matched",
+        "school_id": "fairfax_county_va:woodson_high_school"
+      },
+      {
+        "feature_name": "McLean",
+        "status": "matched",
+        "school_id": "fairfax_county_va:mclean_high_school"
+      }
+    ]
+  },
+  {
+    "path": "montgomery_hs_boundaries.geojson",
+    "mappings": [
+      {
+        "feature_name": "Seneca Valley HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:seneca_valley_high_school"
+      },
+      {
+        "feature_name": "Quince Orchard HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:quince_orchard_high_school"
+      },
+      {
+        "feature_name": "Poolesville HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:poolesville_high_school"
+      },
+      {
+        "feature_name": "Richard Montgomery HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:richard_montgomery_high_school"
+      },
+      {
+        "feature_name": "Rockville HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:rockville_high_school"
+      },
+      {
+        "feature_name": "Wootton HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:thomas_s_wootton_high_school"
+      },
+      {
+        "feature_name": "Northwest HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:northwest_high_school"
+      },
+      {
+        "feature_name": "Clarksburg HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:clarksburg_high_school"
+      },
+      {
+        "feature_name": "Paint Branch HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:paint_branch_high_school"
+      },
+      {
+        "feature_name": "Blake HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:james_hubert_blake_high_school"
+      },
+      {
+        "feature_name": "Bethesda-Chevy Chase HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:bethesda_chevy_chase_high_school"
+      },
+      {
+        "feature_name": "Walter Johnson HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:walter_johnson_high_school"
+      },
+      {
+        "feature_name": "Whitman HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:walt_whitman_high_school"
+      },
+      {
+        "feature_name": "Sherwood HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:sherwood_high_school"
+      },
+      {
+        "feature_name": "Magruder HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:col_zadok_magruder_high_school"
+      },
+      {
+        "feature_name": "Watkins Mill HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:watkins_mill_high_school"
+      },
+      {
+        "feature_name": "Gaithersburg HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:gaithersburg_high_school"
+      },
+      {
+        "feature_name": "Churchill HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:winston_churchill_high_school"
+      },
+      {
+        "feature_name": "Damascus HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:damascus_high_school"
+      },
+      {
+        "feature_name": "Blair HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:montgomery_blair_high_school"
+      },
+      {
+        "feature_name": "Wheaton HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:wheaton_high_school"
+      },
+      {
+        "feature_name": "Einstein HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:albert_einstein_high_school"
+      },
+      {
+        "feature_name": "Northwood HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:northwood_high_school"
+      },
+      {
+        "feature_name": "Springbrook HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:springbrook_high_school"
+      },
+      {
+        "feature_name": "Kennedy HS",
+        "status": "matched",
+        "school_id": "montgomery_county_md:john_f_kennedy_high_school"
+      }
+    ]
+  },
+  {
+    "path": "arlington_hs_boundaries.geojson",
+    "mappings": [
+      {
+        "feature_name": "Wakefield High School",
+        "status": "matched",
+        "school_id": "arlington_va:wakefield_high_school"
+      },
+      {
+        "feature_name": "Washington-Liberty High School",
+        "status": "matched",
+        "school_id": "arlington_va:washington_liberty_high_school"
+      },
+      {
+        "feature_name": "Yorktown High School",
+        "status": "matched",
+        "school_id": "arlington_va:yorktown_high_school"
+      }
+    ]
+  },
+  {
+    "path": "princegeorge_hs_boundaries.geojson",
+    "mappings": [
+      {
+        "feature_name": "CENTRAL HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:central_high_school"
+      },
+      {
+        "feature_name": "BLADENSBURG HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:bladensburg_high_school"
+      },
+      {
+        "feature_name": "BOWIE HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:bowie_high_school"
+      },
+      {
+        "feature_name": "CHARLES HERBERT FLOWERS HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:charles_herbert_flowers_high_school"
+      },
+      {
+        "feature_name": "CROSSLAND HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:crossland_high_school"
+      },
+      {
+        "feature_name": "DUVAL HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:duval_high_school"
+      },
+      {
+        "feature_name": "DR HENRY A WISE, JR. HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:dr_henry_a_wise_jr_high_school"
+      },
+      {
+        "feature_name": "ELEANOR ROOSEVELT HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:eleanor_roosevelt_high_school"
+      },
+      {
+        "feature_name": "FAIRMONT HEIGHTS HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:fairmont_heights_high_school"
+      },
+      {
+        "feature_name": "FREDERICK DOUGLASS HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:frederick_douglass_high_school"
+      },
+      {
+        "feature_name": "FRIENDLY HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:friendly_high_school"
+      },
+      {
+        "feature_name": "GWYNN PARK HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:gwynn_park_high_school"
+      },
+      {
+        "feature_name": "HIGH POINT HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:high_point_high_school"
+      },
+      {
+        "feature_name": "LARGO HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:largo_high_school"
+      },
+      {
+        "feature_name": "LAUREL HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:laurel_high_school"
+      },
+      {
+        "feature_name": "NORTHWESTERN HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:northwestern_high_school"
+      },
+      {
+        "feature_name": "OXON HILL HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:oxon_hill_high_school"
+      },
+      {
+        "feature_name": "PARKDALE HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:parkdale_high_school"
+      },
+      {
+        "feature_name": "POTOMAC HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:potomac_high_school"
+      },
+      {
+        "feature_name": "SUITLAND HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:suitland_high_school"
+      },
+      {
+        "feature_name": "SURRATTSVILLE HIGH",
+        "status": "matched",
+        "school_id": "prince_georges_county_md:surrattsville_high_school"
+      }
+    ]
+  },
+  {
+    "path": "Alexandria.geojson",
+    "mappings": [
+      {
+        "feature_name": "City of Alexandria",
+        "status": "matched",
+        "school_id": "alexandria_city_va:alexandria_city_high_school"
+      }
+    ]
+  },
+  {
+    "path": "DC.geojson",
+    "mappings": [
+      {
+        "feature_name": "Jackson-Reed",
+        "status": "matched",
+        "school_id": "washington_dc:jackson_reed_high_school"
+      },
+      {
+        "feature_name": "Ballou",
+        "status": "matched",
+        "school_id": "washington_dc:ballou_high_school"
+      },
+      {
+        "feature_name": "Roosevelt",
+        "status": "matched",
+        "school_id": "washington_dc:roosevelt_high_school"
+      },
+      {
+        "feature_name": "Dunbar",
+        "status": "matched",
+        "school_id": "washington_dc:dunbar_high_school"
+      },
+      {
+        "feature_name": "Eastern",
+        "status": "matched",
+        "school_id": "washington_dc:eastern_high_school"
+      },
+      {
+        "feature_name": "Anacostia",
+        "status": "matched",
+        "school_id": "washington_dc:anacostia_high_school"
+      },
+      {
+        "feature_name": "MacArthur",
+        "status": "matched",
+        "school_id": "washington_dc:macarthur_high_school"
+      },
+      {
+        "feature_name": "Woodson",
+        "status": "matched",
+        "school_id": "washington_dc:h_d_woodson_high_school"
+      },
+      {
+        "feature_name": "Cardozo",
+        "status": "matched",
+        "school_id": "washington_dc:cardozo_education_campus"
+      },
+      {
+        "feature_name": "Coolidge",
+        "status": "matched",
+        "school_id": "washington_dc:coolidge_high_school"
+      }
+    ]
+  },
+  {
+    "path": "falls_church_city_boundary.geojson",
+    "mappings": [
+      {
+        "feature_name": "Falls Church",
+        "status": "matched",
+        "school_id": "falls_church_city_va:meridian_high_school"
+      }
+    ]
+  }
+]

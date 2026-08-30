@@ -1,0 +1,65 @@
+[
+  {
+    "path": "fairfax_hs_boundaries.geojson",
+    "jurisdiction": "Fairfax County, VA",
+    "source_name": "Fairfax County GIS",
+    "source_url": "https://services1.arcgis.com/ioennV6PpG5Xodq0/ArcGIS/rest/services/OpenData_S1/FeatureServer/12",
+    "name_field": "SCHOOL_NAME",
+    "school_year": "2025-2026",
+    "boundary_type": "attendance_boundary"
+  },
+  {
+    "path": "montgomery_hs_boundaries.geojson",
+    "jurisdiction": "Montgomery County, MD",
+    "source_name": "Montgomery County GeoHub / MCPS",
+    "source_url": "https://geohub.montgomerycountymd.gov/mapping2/rest/services/Boundaries/MCPS_High_School_Areas/FeatureServer/0",
+    "name_field": "S_NAME",
+    "school_year": "2026-2027",
+    "boundary_type": "attendance_boundary"
+  },
+  {
+    "path": "arlington_hs_boundaries.geojson",
+    "jurisdiction": "Arlington, VA",
+    "source_name": "Arlington County GIS snapshot",
+    "source_url": "https://www.arcgis.com/home/item.html?id=c1a3546c56314fce83426524d63d7d22",
+    "name_field": "HS_Name",
+    "school_year": "2022-2023",
+    "boundary_type": "attendance_boundary"
+  },
+  {
+    "path": "princegeorge_hs_boundaries.geojson",
+    "jurisdiction": "Prince George's County, MD",
+    "source_name": "Repository snapshot; authoritative endpoint pending",
+    "source_url": null,
+    "name_field": "NAME",
+    "school_year": "unknown",
+    "boundary_type": "attendance_boundary"
+  },
+  {
+    "path": "Alexandria.geojson",
+    "jurisdiction": "Alexandria City, VA",
+    "source_name": "Repository municipal-boundary snapshot",
+    "source_url": null,
+    "name_field": "NAME",
+    "school_year": "unknown",
+    "boundary_type": "municipal_boundary"
+  },
+  {
+    "path": "DC.geojson",
+    "jurisdiction": "Washington, DC",
+    "source_name": "DC GIS Open Data",
+    "source_url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Education_WebMercator/MapServer/15",
+    "name_field": "NAME",
+    "school_year": "unknown",
+    "boundary_type": "attendance_boundary"
+  },
+  {
+    "path": "falls_church_city_boundary.geojson",
+    "jurisdiction": "Falls Church City, VA",
+    "source_name": "City of Falls Church GIS / VGIN",
+    "source_url": "https://services1.arcgis.com/2hmXRAz4ofcdQP6p/arcgis/rest/services/Jurisdictional_Boundary/FeatureServer/0",
+    "name_field": "NAME",
+    "school_year": "unknown",
+    "boundary_type": "municipal_boundary"
+  }
+]

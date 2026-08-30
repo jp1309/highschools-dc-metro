@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "greatschools",
+      "name": "GreatSchools",
+      "rating_min": 1,
+      "rating_max": 10,
+      "allowed_hosts": [
+        "www.greatschools.org",
+        "greatschools.org"
+      ],
+      "allowed_methods": [
+        "authorized_bulk_feed",
+        "user_supplied_manual_verification"
+      ],
+      "requires_written_license": true,
+      "terms_url": "https://www.greatschools.org/gk/terms/",
+      "licensing_url": "https://solutions.greatschools.org/k12-data-solutions/enterprise-data-license",
+      "required_permissions": [
+        "store and materialize ratings",
+        "combine ratings with school and boundary data",
+        "redistribute ratings in public JSON and HTML",
+        "display ratings on the project's public domain"
+      ]
+    }
+  ]
+}
