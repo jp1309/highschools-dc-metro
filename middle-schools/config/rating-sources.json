@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "score_input_policy": "only_user_supplied_workbook",
+  "sources": [
+    {
+      "id": "greatschools-user-workbook-20260830",
+      "name": "GreatSchools ratings supplied by the user",
+      "provider": "GreatSchools",
+      "method": "user_supplied_workbook",
+      "rating_min": 1,
+      "rating_max": 10,
+      "workbook_filename": "middle_schools_greatschools_DC_area.xlsx",
+      "workbook_sha256": "6072c6d2e43289ccfff8cd0596493296d6f96a30f586ae1d18485f595a011ce8",
+      "repository_path": "outputs/ratings-manual-20260830/middle_schools_greatschools_DC_area.xlsx",
+      "sheet": "Middle Schools",
+      "data_range": "A6:I197",
+      "checked_at": "2026-08-30T00:00:00Z",
+      "rating_as_of": null,
+      "automated_provider_access": false,
+      "redistribution_permission_documented": false,
+      "note": "Este archivo proporcionado por el usuario es la única fuente de scores. El proyecto no realizó una consulta automatizada a GreatSchools y no afirma que exista autorización de redistribución."
+    }
+  ]
+}

@@ -1,7 +1,14 @@
-# Escuelas secundarias del área de Washington, DC
+# Mapas escolares del área de Washington, DC
 
-[Ver el mapa publicado](https://jp1309.github.io/highschools-dc-metro/) ·
+[High schools](https://jp1309.github.io/highschools-dc-metro/) ·
+[Middle schools](https://jp1309.github.io/highschools-dc-metro/middle-schools/) ·
 [Estado de validación](https://github.com/jp1309/highschools-dc-metro/actions/workflows/validate.yml)
+
+El repositorio publica dos exploradores independientes dentro del mismo sitio.
+Cada uno conserva sus propios datos, evidencias, límites, pruebas y
+documentación; los registros de high schools y middle schools no se mezclan.
+
+## High schools
 
 Mapa interactivo de 84 escuelas secundarias públicas en siete jurisdicciones
 del área metropolitana de Washington, DC. Permite comparar ubicaciones,

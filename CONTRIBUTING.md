@@ -14,11 +14,19 @@ git clone https://github.com/jp1309/highschools-dc-metro.git
 cd highschools-dc-metro
 py -3 scripts/validate_data.py
 py -3 -m unittest discover -s tests -v
+py -3 middle-schools/scripts/validate_data.py
+py -3 middle-schools/scripts/validate_boundaries.py
+py -3 -m unittest discover -s middle-schools/tests -v
+py -3 scripts/build_site.py
 py -3 -m http.server 8000
 ```
 
 Abra `http://localhost:8000/`. No abra `index.html` directamente: el navegador
 restringe las solicitudes `fetch()` desde `file://`.
+
+El mapa de middle schools queda en
+`http://localhost:8000/middle-schools/`. Este servidor local es únicamente para
+desarrollo; los enlaces públicos están en el README.
 
 ## Principios para cambios de datos
 
@@ -117,6 +125,10 @@ Antes de proponer un cambio:
 ```powershell
 py -3 scripts/validate_data.py
 py -3 -m unittest discover -s tests -v
+py -3 middle-schools/scripts/validate_data.py
+py -3 middle-schools/scripts/validate_boundaries.py
+py -3 -m unittest discover -s middle-schools/tests -v
+py -3 scripts/build_site.py
 git diff --check
 ```
 

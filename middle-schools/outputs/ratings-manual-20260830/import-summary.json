@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "run_id": "ratings-manual-20260830",
+  "completed_at": "2026-08-30T00:00:00Z",
+  "source_workbook": "outputs/ratings-manual-20260830/middle_schools_greatschools_DC_area.xlsx",
+  "source_sha256": "6072c6d2e43289ccfff8cd0596493296d6f96a30f586ae1d18485f595a011ce8",
+  "records": 192,
+  "rating_source": "GreatSchools",
+  "rating_input": "user_supplied_workbook_only",
+  "outputs": [
+    "data/schools.json",
+    "data/rating-evidence.json",
+    "data/school-locations.json"
+  ]
+}

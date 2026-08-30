@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mapa auditable de middle schools públicas y charter del área metropolitana de Washington, DC.">
+  <meta name="theme-color" content="#132a3a">
+  <title>Middle schools del área metropolitana de Washington, DC</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="assets/styles.css?v=20260830-middle-schools">
+</head>
+<body>
+  <a class="skip-link" href="#school-list">Saltar a la lista de escuelas</a>
+
+  <header class="site-header">
+    <div class="header-copy">
+      <p class="eyebrow">Datos escolares · DC Metro</p>
+      <h1>Middle schools, ubicaciones y zonas</h1>
+      <p class="lede">Explore 192 escuelas con score, tipo, grados atendidos y límites oficiales cuando están disponibles.</p>
+      <nav class="site-nav" aria-label="Nivel escolar">
+        <a href="../">High schools</a>
+        <a href="./" aria-current="page">Middle schools</a>
+      </nav>
+    </div>
+    <div class="header-meta" aria-label="Información de actualización">
+      <span>Fecha de entrega de scores</span>
+      <strong id="data-as-of">Cargando…</strong>
+    </div>
+  </header>
+
+  <main>
+    <section class="status-region" aria-label="Estado de los datos">
+      <div id="load-status" class="status status-loading" role="status" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        Cargando escuelas y límites oficiales…
+      </div>
+      <noscript>
+        <div class="status status-error">Este mapa necesita JavaScript. Los datos permanecen disponibles en <code>data/</code>.</div>
+      </noscript>
+    </section>
+
+    <section class="kpi-grid" aria-label="Resumen de cobertura">
+      <article class="kpi-card"><span class="kpi-label">Escuelas únicas</span><strong id="kpi-schools">—</strong></article>
+      <article class="kpi-card"><span class="kpi-label">Con zona oficial</span><strong id="kpi-boundaries">—</strong></article>
+      <article class="kpi-card"><span class="kpi-label">Score promedio</span><strong id="kpi-average">—</strong></article>
+      <article class="kpi-card kpi-card-accent"><span class="kpi-label">Resultados visibles</span><strong id="kpi-visible">—</strong></article>
+    </section>
+
+    <section class="explorer" aria-label="Explorador de middle schools">
+      <aside class="sidebar" aria-label="Filtros y lista de escuelas">
+        <form id="filters" class="filters" role="search">
+          <div class="section-heading">
+            <div><p class="eyebrow">Explorar</p><h2>Encuentre una escuela</h2></div>
+            <button id="reset-filters" class="text-button" type="reset">Limpiar</button>
+          </div>
+
+          <label for="search-input">Nombre, ciudad o dirección</label>
+          <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search-input" name="query" type="search" autocomplete="off" placeholder="Ej. Deal, Arlington…"></div>
+
+          <div class="filter-row">
+            <div><label for="jurisdiction-filter">Jurisdicción</label><select id="jurisdiction-filter" name="jurisdiction"><option value="">Todas</option></select></div>
+            <div><label for="type-filter">Tipo</label><select id="type-filter" name="type"><option value="">Todos</option></select></div>
+          </div>
+          <div class="filter-row">
+            <div><label for="grades-filter">Grado atendido</label><select id="grades-filter" name="grade"><option value="">Todos</option></select></div>
+            <div><label for="rating-filter">Score mínimo</label><select id="rating-filter" name="rating"><option value="0">Todos</option><option value="9">9 o más</option><option value="7">7 o más</option><option value="5">5 o más</option><option value="3">3 o más</option></select></div>
+          </div>
+
+          <fieldset class="layer-controls">
+            <legend>Capas del mapa</legend>
+            <label class="switch-row"><input id="toggle-boundaries" type="checkbox" checked><span>Mostrar zonas y contexto municipal</span></label>
+            <p class="control-note">Las ubicaciones siempre permanecen visibles según sus filtros.</p>
+          </fieldset>
+        </form>
+
+        <div class="list-header"><h3 id="list-title">Middle schools</h3><span id="list-count" aria-live="polite">0 resultados</span></div>
+        <ul id="school-list" class="school-list" aria-labelledby="list-title" tabindex="-1"></ul>
+        <p id="empty-state" class="empty-state" hidden>No hay escuelas que coincidan con los filtros.</p>
+      </aside>
+
+      <div class="map-column">
+        <div id="map" role="region" aria-label="Mapa interactivo de middle schools y zonas de asistencia"></div>
+        <div class="map-legend" aria-label="Leyenda de scores">
+          <strong>Score</strong>
+          <span><i class="legend-swatch legend-best" aria-hidden="true"></i>9–10 · verde intenso</span>
+          <span><i class="legend-swatch legend-good" aria-hidden="true"></i>7–8 · verde</span>
+          <span><i class="legend-swatch legend-mid" aria-hidden="true"></i>5–6 · amarillo</span>
+          <span><i class="legend-swatch legend-low" aria-hidden="true"></i>3–4 · naranja</span>
+          <span><i class="legend-swatch legend-worst" aria-hidden="true"></i>1–2 · rojo intenso</span>
+          <span><i class="legend-swatch legend-none" aria-hidden="true"></i>Sin dato</span>
+          <span><i class="legend-swatch legend-municipal" aria-hidden="true"></i>Límite municipal · no es zona escolar</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="methodology" aria-labelledby="methodology-title">
+      <div><p class="eyebrow">Cómo leer este mapa</p><h2 id="methodology-title">Cobertura y límites</h2></div>
+      <div class="methodology-copy">
+        <p>El universo reproduce exactamente las 192 filas con score del libro proporcionado por el usuario. Incluye escuelas con grados intermedios aunque también atiendan primaria o high school.</p>
+        <p>Una escuela charter o de elección puede no tener una zona residencial propia. Los polígonos se muestran solo con correspondencias explícitas y dentro de la jurisdicción correcta.</p>
+        <details><summary>Limitaciones importantes</summary><ul>
+          <li>El listado no es un censo completo de todas las escuelas del área: excluye fichas sin score y otras no revisadas en el archivo fuente.</li>
+          <li>El score es una medida externa puntual; no resume por sí solo la calidad ni garantiza admisión.</li>
+          <li>Confirme asignación, elegibilidad y año escolar directamente con el distrito o la escuela.</li>
+        </ul></details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto de datos abierto. Cartografía base: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+    <p id="coverage-note">La cobertura detallada se mostrará al terminar la carga.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="assets/app.js?v=20260830-middle-schools" defer></script>
+</body>
+</html>

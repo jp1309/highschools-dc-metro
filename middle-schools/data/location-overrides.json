@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "overrides": [
+    {
+      "school_id": "prince_georges_county_md:turning_point_academy_public_charter",
+      "address": "7800 Good Luck Rd, Lanham, MD 20706",
+      "lat": 38.979472173613,
+      "lng": -76.871415241743,
+      "location_status": "verified_official_historical",
+      "operational_status": "closed_historical",
+      "source_name": "PGCPS historical closure record and U.S. Census Geocoder",
+      "source_url": "https://www.pgcps.org/schools/kenilworth-elementary/faculty-directory-page/clomax-rhonda",
+      "coordinate_source_url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=7800%20Good%20Luck%20Rd%2C%20Lanham%2C%20MD%2020706&benchmark=Public_AR_Current&format=json",
+      "source_dataset_id": "pgcps_historical_address_census_geocoder",
+      "source_record_id": "census-tigerline-645172171",
+      "retrieved_at": "2026-08-30T00:00:00Z",
+      "note": "Historical campus location only. PGCPS reports that Turning Point Academy Public Charter closed on 2021-06-30."
+    }
+  ]
+}

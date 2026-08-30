@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-30T00:00:00Z",
+  "entries": [
+    {
+      "path": "boundaries/arlington_middle_boundaries_2022_2023.geojson",
+      "jurisdiction": "Arlington, VA",
+      "source_name": "Arlington County GIS / Arlington Public Schools",
+      "source_url": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_School_Boundaries_Polygons/FeatureServer/1",
+      "name_field": "MS_Name",
+      "school_year": "2022-2023",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "official_geometry_stale_year_metadata",
+      "feature_count": 6,
+      "note": "APS sigue publicando estas seis geometrías, pero el campo de vigencia no se ha actualizado."
+    },
+    {
+      "path": "boundaries/fairfax_middle_boundaries_2025_2026.geojson",
+      "jurisdiction": "Fairfax County, VA",
+      "source_name": "Fairfax County GIS / Fairfax County Public Schools",
+      "source_url": "https://services1.arcgis.com/ioennV6PpG5Xodq0/ArcGIS/rest/services/OpenData_S1/FeatureServer/11",
+      "name_field": "SCHOOL_NAME",
+      "school_year": "2025-2026",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "historical_after_2026_2027_changes",
+      "feature_count": 26,
+      "note": "No presentar como 2026-2027: FCPS aprobó cambios posteriores a esta capa con año explícito."
+    },
+    {
+      "path": "boundaries/falls_church_city_boundary.geojson",
+      "jurisdiction": "Falls Church City, VA",
+      "source_name": "City of Falls Church GIS",
+      "source_url": "https://services1.arcgis.com/2hmXRAz4ofcdQP6p/arcgis/rest/services/Zoning_public/FeatureServer/3",
+      "name_field": "CTYBND_ID",
+      "school_year": "current",
+      "boundary_type": "municipal_boundary",
+      "currency_status": "current_context_only",
+      "feature_count": 1,
+      "note": "Contexto municipal vinculado a Mary Ellen Henderson; no es una zona de asistencia."
+    },
+    {
+      "path": "boundaries/alexandria_middle_boundaries_2026_2027.geojson",
+      "jurisdiction": "Alexandria City, VA",
+      "source_name": "Alexandria City Public Schools / SchoolSite Locator",
+      "source_url": "https://www.acps.k12.va.us/families/school-boundaries",
+      "service_url": "https://www.schoolsitelocator.com/server/rest/services/ssl_AB/MapServer/444",
+      "name_field": "MID_DESC",
+      "school_year": "2026-2027",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "current_officially_linked_vendor_service",
+      "feature_count": 5,
+      "note": "Cinco entidades representan cuatro zonas; Jefferson-Houston ocupa dos entidades."
+    },
+    {
+      "path": "boundaries/montgomery_middle_boundaries_2026_2027.geojson",
+      "jurisdiction": "Montgomery County, MD",
+      "source_name": "Montgomery County GeoHub / Montgomery County Public Schools",
+      "source_url": "https://geohub.montgomerycountymd.gov/mapping2/rest/services/Boundaries/MCPS_Middle_School_Areas/FeatureServer/0",
+      "name_field": "S_NAME",
+      "school_year": "2026-2027",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "current",
+      "feature_count": 40
+    },
+    {
+      "path": "boundaries/prince_georges_middle_boundaries_2026_2027.geojson",
+      "jurisdiction": "Prince George's County, MD",
+      "source_name": "Prince George's County Public Schools",
+      "source_url": "https://gis.pgcps.org/mapgallery/",
+      "service_url": "https://services2.arcgis.com/pgXDZi16V8DawtpF/arcgis/rest/services/ArcGISonline_update_gdb/FeatureServer/2",
+      "name_field": "NAME",
+      "school_year": "2026-2027",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "current_official_webmap_layer",
+      "feature_count": 31
+    },
+    {
+      "path": "boundaries/dc_middle_boundaries_current.geojson",
+      "jurisdiction": "Washington, DC",
+      "source_name": "DC GIS / District of Columbia Public Schools",
+      "source_url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Education_WebMercator/MapServer/17",
+      "name_field": "NAME",
+      "school_year": "unknown",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "official_current_service_year_unspecified",
+      "feature_count": 21,
+      "note": "La capa operativa no expone el año; solo se vinculan escuelas de vecindario con zona verificable."
+    }
+  ]
+}
