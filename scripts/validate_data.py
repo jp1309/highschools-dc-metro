@@ -28,6 +28,12 @@ RATING_DATE_RE = re.compile(r"^\d{4}(?:-(0[1-9]|1[0-2]))?$")
 UTC_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$")
 REGION_LAT = (38.4, 39.5)
 REGION_LNG = (-77.8, -76.5)
+
+
+def _geojson_snapshot_bytes(path: Path) -> bytes:
+    """Return stable bytes for hashes across LF and CRLF checkouts."""
+
+    return path.read_bytes().replace(b"\r\n", b"\n")
 JURISDICTION_PREFIXES = {
     "Arlington, VA": "arlington_va",
     "Fairfax County, VA": "fairfax_county_va",
@@ -473,6 +479,8 @@ def _validate_source_snapshot(root: Path, result: ValidationResult) -> int:
     if not isinstance(snapshot, dict) or not isinstance(snapshot.get("sources"), list):
         result.errors.append("data/source-snapshot.json must contain a sources array")
         return 0
+    if snapshot.get("hash_normalization") != "crlf_to_lf":
+        result.errors.append("data/source-snapshot.json must declare CRLF-to-LF hash normalization")
 
     configured = {
         item.get("id"): item
@@ -504,12 +512,15 @@ def _validate_source_snapshot(root: Path, result: ValidationResult) -> int:
         if root not in path.parents or not path.is_file():
             result.errors.append(f"Source {source_id!r} output is missing or unsafe: {output!r}")
             continue
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        snapshot_bytes = _geojson_snapshot_bytes(path)
+        digest = hashlib.sha256(snapshot_bytes).hexdigest()
         if digest != record.get("sha256"):
             result.errors.append(
                 f"Source {source_id!r} hash differs from data/source-snapshot.json; "
                 "run scripts/refresh_boundaries.py --apply or document the snapshot change"
             )
+        if len(snapshot_bytes) != record.get("bytes"):
+            result.errors.append(f"Source {source_id!r} byte count differs from its snapshot")
         if record.get("features") != source.get("expected_features"):
             result.errors.append(
                 f"Source {source_id!r} recorded {record.get('features')!r} features; "

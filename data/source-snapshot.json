@@ -1,5 +1,6 @@
 {
   "schema_version": 1,
+  "hash_normalization": "crlf_to_lf",
   "generated_at": "2026-08-29T14:22:43.541732+00:00",
   "sources": [
     {
@@ -63,8 +64,8 @@
       "year_values": [
         "2022-2023"
       ],
-      "sha256": "a50c3fc815bda25492f1a43530e32f895f3d81258541ba1dde8350c1e3ba0957",
-      "bytes": 556855,
+      "sha256": "b13a3a85d8bbd2fbc541cc6773daa96f84a1ecb591aa556aa06705c22559f68e",
+      "bytes": 556845,
       "refresh_enabled": false,
       "note": "A current authoritative download endpoint still needs to be verified."
     },
@@ -78,8 +79,8 @@
       "http_status": null,
       "features": 21,
       "year_values": [],
-      "sha256": "481b6aca19591b9659a60b2ef72498d6202bec3b4671f9486cefb91eef2bf8e2",
-      "bytes": 4686193,
+      "sha256": "4b08c3de7e6ceeba4ede985d1677290dc943c05b4cf591c2e4e38c2c8921884f",
+      "bytes": 4492941,
       "refresh_enabled": false,
       "note": "Do not refresh automatically until PGCPS provenance and school year are confirmed."
     },

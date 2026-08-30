@@ -35,6 +35,11 @@ tipo. El crosswalk resuelve cada nombre original a un ID de escuela o documenta
 por qué no existe asociación. El frontend consume estos artefactos; no realiza
 uniones difusas.
 
+Los hashes de snapshots GeoJSON normalizan únicamente `CRLF` a `LF` antes de
+calcular SHA-256, para que una misma capa conserve la misma identidad en Windows
+y en los runners Linux. No se normaliza estructura, orden, precisión ni contenido
+JSON.
+
 ## Calificaciones y escuelas
 
 Las calificaciones presentes en la versión original carecían de URL y evidencia

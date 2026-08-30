@@ -24,6 +24,12 @@ DEFAULT_CONFIG = ROOT / "config" / "sources.json"
 SNAPSHOT_PATH = ROOT / "data" / "source-snapshot.json"
 
 
+def _geojson_snapshot_bytes(raw: bytes) -> bytes:
+    """Normalize line endings so hashes survive cross-platform checkout."""
+
+    return raw.replace(b"\r\n", b"\n")
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
@@ -106,7 +112,7 @@ def download_geojson(source: dict[str, Any], timeout: int) -> tuple[bytes, dict[
 
 def local_snapshot(source: dict[str, Any]) -> dict[str, Any]:
     path = ROOT / source["output"]
-    raw = path.read_bytes()
+    raw = _geojson_snapshot_bytes(path.read_bytes())
     data = json.loads(raw.decode("utf-8-sig"))
     return {
         "id": source["id"],
@@ -185,6 +191,7 @@ def main() -> int:
             atomic_write(path, content)
         snapshot_document = {
             "schema_version": 1,
+            "hash_normalization": "crlf_to_lf",
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "sources": snapshots,
         }
