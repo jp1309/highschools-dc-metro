@@ -20,6 +20,22 @@ def load_json(relative_path: str):
 
 
 class DataValidationTests(unittest.TestCase):
+    def test_level_headers_share_the_same_template(self):
+        high_html = (ROOT / "index.html").read_text(encoding="utf-8")
+        middle_html = (ROOT / "middle-schools" / "index.html").read_text(encoding="utf-8")
+
+        for html, level, count in (
+            (high_html, "High schools", 84),
+            (middle_html, "Middle schools", 192),
+        ):
+            self.assertIn(f"<h1>{level}, ubicaciones y zonas</h1>", html)
+            self.assertIn(
+                f"Explore {count} escuelas con score, tipo, grados atendidos y límites oficiales "
+                "cuando están disponibles.",
+                html,
+            )
+            self.assertIn("<span>Fecha de entrega de scores</span>", html)
+
     def test_project_data_passes_full_validation(self):
         result = validate_project(ROOT)
         self.assertTrue(result.ok, "\n".join(result.errors))
