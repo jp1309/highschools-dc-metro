@@ -1,0 +1,2251 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-12T00:00:00Z",
+  "matching_policy": "Exact normalized names within the same jurisdiction plus documented explicit aliases. Charter and choice schools never receive inferred polygons.",
+  "files": [
+    {
+      "path": "boundaries/arlington_elementary_boundaries_2022_2023.geojson",
+      "feature_name_field": "ES_Name",
+      "mappings": {
+        "Abingdon Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:abingdon_elementary_school"
+        },
+        "Arlington Science Focus Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:arlington_science_focus_school"
+        },
+        "Ashlawn Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:ashlawn_elementary_school"
+        },
+        "Barcroft Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:barcroft_elementary_school"
+        },
+        "Barrett Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:barrett_elementary_school"
+        },
+        "Carlin Springs Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:carlin_springs_elementary_school"
+        },
+        "Discovery Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:discovery_elementary_school"
+        },
+        "Dr. Charles R. Drew Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:dr_charles_r_drew_elementary"
+        },
+        "Glebe Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:glebe_elementary_school"
+        },
+        "Hoffman-Boston Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:hoffman_boston_elementary_school"
+        },
+        "Long Branch Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:long_branch_elementary_school"
+        },
+        "Cardinal Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:cardinal_elementary_school"
+        },
+        "Innovation Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:innovation_elementary_school"
+        },
+        "Nottingham Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:nottingham_elementary_school"
+        },
+        "Oakridge Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:oakridge_elementary_school"
+        },
+        "Randolph Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:randolph_elementary_school"
+        },
+        "Taylor Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:taylor_elementary_school"
+        },
+        "Tuckahoe Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:tuckahoe_elementary_school"
+        },
+        "Alice West Fleet Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:alice_west_fleet_elementary"
+        },
+        "Jamestown Elementary School": {
+          "status": "matched",
+          "school_id": "arlington_va:jamestown_elementary_school"
+        }
+      }
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "feature_name_field": "SCHOOL_NAME",
+      "mappings": {
+        "Aldrin": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:aldrin_elementary_school"
+        },
+        "Annandale Terrace": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:annandale_terrace_elementary_school"
+        },
+        "Armstrong": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:armstrong_elementary_school"
+        },
+        "Bailey's": {
+          "status": "matched_alias",
+          "school_id": "fairfax_county_va:baileys_elementary_school_for_the_arts_and_sciences",
+          "school_ids": [
+            "fairfax_county_va:baileys_elementary_school_for_the_arts_and_sciences"
+          ],
+          "reason": "FCPS boundary uses the short campus name."
+        },
+        "Belle View": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:belle_view_elementary_school"
+        },
+        "Belvedere": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:belvedere_elementary_school"
+        },
+        "Bonnie Brae": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:bonnie_brae_elementary_school"
+        },
+        "Braddock": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:braddock_elementary_school"
+        },
+        "Bren Mar Park": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:bren_mar_park_elementary_school"
+        },
+        "Brookfield": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:brookfield_elementary_school"
+        },
+        "Bucknell": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:bucknell_elementary_school"
+        },
+        "Bull Run": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:bull_run_elementary_school"
+        },
+        "Bush Hill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:bush_hill_elementary_school"
+        },
+        "Camelot": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:camelot_elementary_school"
+        },
+        "Cameron": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:cameron_elementary_school"
+        },
+        "Canterbury Woods": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:canterbury_woods_elementary_school"
+        },
+        "Cardinal Forest": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:cardinal_forest_elementary_school"
+        },
+        "Centre Ridge": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:centre_ridge_elementary_school"
+        },
+        "Centreville": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:centreville_elementary_school"
+        },
+        "Cherry Run": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:cherry_run_elementary_school"
+        },
+        "Chesterbrook": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:chesterbrook_elementary_school"
+        },
+        "Churchill Road": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:churchill_road_elementary_school"
+        },
+        "Clearview": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:clearview_elementary_school"
+        },
+        "Clermont": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:clermont_elementary_school"
+        },
+        "Coates": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:coates_elementary"
+        },
+        "Columbia": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:columbia_elementary_school"
+        },
+        "Colvin Run": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:colvin_run_elementary_school"
+        },
+        "Crestwood": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:crestwood_elementary_school"
+        },
+        "Crossfield": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:crossfield_elementary_school"
+        },
+        "Cub Run": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:cub_run_elementary_school"
+        },
+        "Cunningham Park": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:cunningham_park_elementary_school"
+        },
+        "Daniels Run": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:daniels_run_elementary_school"
+        },
+        "Deer Park": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:deer_park_elementary_school"
+        },
+        "Dogwood": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:dogwood_elementary_school"
+        },
+        "Dranesville": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:dranesville_elementary_school"
+        },
+        "Eagle View": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:eagle_view_elementary_school"
+        },
+        "Fairfax Villa": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:fairfax_villa_elementary_school"
+        },
+        "Fairhill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:fairhill_elementary_school"
+        },
+        "Fairview": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:fairview_elementary_school"
+        },
+        "Flint Hill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:flint_hill_elementary_school"
+        },
+        "Floris": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:floris_elementary_school"
+        },
+        "Forest Edge": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:forest_edge_elementary_school"
+        },
+        "Forestdale": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:forestdale_elementary_school"
+        },
+        "Forestville": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:forestville_elementary_school"
+        },
+        "Fort Hunt": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Fox Mill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:fox_mill_elementary_school"
+        },
+        "Franconia": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Franklin Sherman": {
+          "status": "matched_alias",
+          "school_id": "fairfax_county_va:sherman_elementary_school",
+          "school_ids": [
+            "fairfax_county_va:sherman_elementary_school"
+          ],
+          "reason": "Workbook uses the shortened Sherman name."
+        },
+        "Freedom Hill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:freedom_hill_elementary_school"
+        },
+        "Garfield": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:garfield_elementary_school"
+        },
+        "Glen Forest": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:glen_forest_elementary_school"
+        },
+        "Graham Road": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:graham_road_elementary_school"
+        },
+        "Great Falls": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:great_falls_elementary_school"
+        },
+        "Greenbriar East": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:greenbriar_east_elementary_school"
+        },
+        "Greenbriar West": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:greenbriar_west_elementary_school"
+        },
+        "Groveton": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:groveton_elementary_school"
+        },
+        "Gunston": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:gunston_elementary_school"
+        },
+        "Halley": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:halley_elementary_school"
+        },
+        "Haycock": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:haycock_elementary_school"
+        },
+        "Hayfield": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:hayfield_elementary_school"
+        },
+        "Herndon": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:herndon_elementary_school"
+        },
+        "Hollin Meadows": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:hollin_meadows_elementary_school"
+        },
+        "Hunt Valley": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:hunt_valley_elementary_school"
+        },
+        "Hunters Woods": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:hunters_woods_elementary"
+        },
+        "Hutchison": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:hutchison_elementary_school"
+        },
+        "Hybla Valley": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:hybla_valley_elementary_school"
+        },
+        "Island Creek": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:island_creek_elementary_school"
+        },
+        "Keene Mill": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Kent Gardens": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:kent_gardens_elementary_school"
+        },
+        "Kings Park": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:kings_park_elementary_school"
+        },
+        "Lake Anne": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:lake_anne_elementary_school"
+        },
+        "Lane": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:lane_elementary_school"
+        },
+        "Laurel Hill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:laurel_hill_elementary_school"
+        },
+        "Laurel Ridge": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:laurel_ridge_elementary_school"
+        },
+        "Lees Corner": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:lees_corner_elementary_school"
+        },
+        "Lemon Road": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:lemon_road_elementary_school"
+        },
+        "Little Run": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:little_run_elementary_school"
+        },
+        "London Towne": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:london_towne_elementary_school"
+        },
+        "Lorton Station": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:lorton_station_elementary_school"
+        },
+        "Louise Archer": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:louise_archer_elementary_school"
+        },
+        "Lynbrook": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:lynbrook_elementary_school"
+        },
+        "Mantua": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:mantua_elementary_school"
+        },
+        "Marshall Road": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:marshall_road_elementary_school"
+        },
+        "Mason Crest": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:mason_crest_elementary_school"
+        },
+        "Mosaic": {
+          "status": "matched_alias",
+          "school_id": "fairfax_county_va:mosby_woods_elementary_school",
+          "school_ids": [
+            "fairfax_county_va:mosby_woods_elementary_school"
+          ],
+          "reason": "FCPS renamed Mosby Woods to Mosaic; workbook retains former name."
+        },
+        "Mount Eagle": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:mount_eagle_elementary_school"
+        },
+        "Mount Vernon Woods": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:mount_vernon_woods_elementary_school"
+        },
+        "Navy": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:navy_elementary_school"
+        },
+        "Newington Forest": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:newington_forest_elementary_school"
+        },
+        "North Springfield": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:north_springfield_elementary_school"
+        },
+        "Oak Hill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:oak_hill_elementary_school"
+        },
+        "Oak View": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:oak_view_elementary_school"
+        },
+        "Oakton": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:oakton_elementary_school"
+        },
+        "Olde Creek": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:olde_creek_elementary_school"
+        },
+        "Orange Hunt": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:orange_hunt_elementary_school"
+        },
+        "Parklawn": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:parklawn_elementary_school"
+        },
+        "Pine Spring": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:pine_spring_elementary_school"
+        },
+        "Poplar Tree": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:poplar_tree_elementary_school"
+        },
+        "Powell": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:powell_elementary_school"
+        },
+        "Providence": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:providence_elementary_school"
+        },
+        "Ravensworth": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:ravensworth_elementary_school"
+        },
+        "Riverside": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:riverside_elementary_school"
+        },
+        "Rolling Valley": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Rose Hill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:rose_hill_elementary_school"
+        },
+        "Sangster": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:sangster_elementary_school"
+        },
+        "Saratoga": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:saratoga_elementary_school"
+        },
+        "Shrevewood": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:shrevewood_elementary_school"
+        },
+        "Silverbrook": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:silverbrook_elementary_school"
+        },
+        "Sleepy Hollow": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:sleepy_hollow_elementary_school"
+        },
+        "Spring Hill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:spring_hill_elementary_school"
+        },
+        "Springfield Estates": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:springfield_estates_elementary_school"
+        },
+        "Stenwood": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:stenwood_elementary_school"
+        },
+        "Stratford Landing": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:stratford_landing_elementary_school"
+        },
+        "Sunrise Valley": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:sunrise_valley_elementary_school"
+        },
+        "Terra Centre": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:terra_centre_elementary_school"
+        },
+        "Terraset": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:terraset_elementary_school"
+        },
+        "Timber Lane": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:timber_lane_elementary_school"
+        },
+        "Union Mill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:union_mill_elementary_school"
+        },
+        "Vienna": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:vienna_elementary_school"
+        },
+        "Virginia Run": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:virginia_run_elementary_school"
+        },
+        "Wakefield Forest": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:wakefield_forest_elementary_school"
+        },
+        "Waples Mill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:waples_mill_elementary_school"
+        },
+        "Washington Mill": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:washington_mill_elementary_school"
+        },
+        "Waynewood": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:waynewood_elementary_school"
+        },
+        "West Springfield": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Westbriar": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:westbriar_elementary_school"
+        },
+        "Westgate": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:westgate_elementary_school"
+        },
+        "Westlawn": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:westlawn_elementary_school"
+        },
+        "Weyanoke": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:weyanoke_elementary_school"
+        },
+        "White Oaks": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:white_oaks_elementary_school"
+        },
+        "Willow Springs": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:willow_springs_elementary_school"
+        },
+        "Wolftrap": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:wolftrap_elementary_school"
+        },
+        "Woodburn": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:woodburn_elementary_school"
+        },
+        "Woodlawn": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:woodlawn_elementary_school"
+        },
+        "Woodley Hills": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:woodley_hills_elementary_school"
+        },
+        "Beech Tree": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:beech_tree_elementary_school"
+        },
+        "Fort Belvoir Primary": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "McNair": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:mcnair_elementary_school"
+        },
+        "Fort Belvoir Upper": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Bailey's Upper": {
+          "status": "matched_alias",
+          "school_id": "fairfax_county_va:baileys_upper_elementary_school_for_the_arts_and_sciences",
+          "school_ids": [
+            "fairfax_county_va:baileys_upper_elementary_school_for_the_arts_and_sciences"
+          ],
+          "reason": "FCPS boundary uses the short campus name."
+        },
+        "McNair Upper": {
+          "status": "matched",
+          "school_id": "fairfax_county_va:mcnair_upper_elementary"
+        },
+        "Kings Glen": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        }
+      }
+    },
+    {
+      "path": "boundaries/falls_church_city_boundary.geojson",
+      "feature_name_field": "CTYBND_ID",
+      "mappings": {
+        "1": {
+          "status": "matched_context",
+          "school_id": null,
+          "school_ids": [
+            "falls_church_city_va:mt_daniel_school",
+            "falls_church_city_va:oak_street_elementary_school"
+          ],
+          "reason": "One municipal service context covers the FCCPS K-2 and 3-5 campuses; this is not an individual attendance zone."
+        }
+      }
+    },
+    {
+      "path": "boundaries/alexandria_elementary_boundaries_2026_2027.geojson",
+      "feature_name_field": "ELEM_DESC",
+      "mappings": {
+        "Mount Vernon": {
+          "status": "matched_alias",
+          "school_id": "alexandria_city_va:mount_vernon_community_school",
+          "school_ids": [
+            "alexandria_city_va:mount_vernon_community_school"
+          ],
+          "reason": "ACPS boundary short name corresponds to Mount Vernon Community School in the workbook."
+        },
+        "Patrick Henry": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:patrick_henry_elementary_school"
+        },
+        "Naomi L Brooks": {
+          "status": "matched_alias",
+          "school_id": "alexandria_city_va:maury_elementary_school",
+          "school_ids": [
+            "alexandria_city_va:maury_elementary_school"
+          ],
+          "reason": "ACPS renamed Maury Elementary to Naomi L. Brooks; workbook retains former name."
+        },
+        "Lyles-Crouch": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:lyles_crouch_elementary"
+        },
+        "Jefferson-Houston": {
+          "status": "matched_alias",
+          "school_id": "alexandria_city_va:jefferson_houston_prek_8_school",
+          "school_ids": [
+            "alexandria_city_va:jefferson_houston_prek_8_school"
+          ],
+          "reason": "ACPS boundary short name corresponds to the workbook PK-8 label."
+        },
+        "George Mason": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:george_mason_elementary_school"
+        },
+        "Douglas MacArthur": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:douglas_macarthur_elementary_school"
+        },
+        "Charles Barrett": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:charles_barrett_elementary_school"
+        },
+        "Cora Kelly": {
+          "status": "matched_alias",
+          "school_id": "alexandria_city_va:cora_kelly_school_for_math_science_and_technology",
+          "school_ids": [
+            "alexandria_city_va:cora_kelly_school_for_math_science_and_technology"
+          ],
+          "reason": "ACPS boundary short name omits the program descriptor."
+        },
+        "William Ramsay": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:william_ramsay_elementary_school"
+        },
+        "James K Polk": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:james_k_polk_elementary_school"
+        },
+        "John Adams": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:john_adams_elementary_school"
+        },
+        "Samuel W Tucker": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:samuel_w_tucker_elementary_school"
+        },
+        "Ferdinand T. Day": {
+          "status": "matched",
+          "school_id": "alexandria_city_va:ferdinand_t_day_elementary"
+        }
+      }
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "feature_name_field": "S_NAME",
+      "mappings": {
+        "Laytonsville ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:laytonsville_elementary_school"
+        },
+        "Clopper Mill ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:clopper_mill_elementary_school"
+        },
+        "Clarksburg ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:clarksburg_elementary_school"
+        },
+        "Germantown ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:germantown_elementary_school"
+        },
+        "Fox Chapel ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:fox_chapel_elementary_school"
+        },
+        "Lake Seneca ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:lake_seneca_elementary_school"
+        },
+        "Waters Landing ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:waters_landing_elementary_school"
+        },
+        "McAuliffe ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:s_christa_mcauliffe_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:s_christa_mcauliffe_elementary_school"
+          ],
+          "reason": "MCPS boundary omits the honorific and first name."
+        },
+        "Daly ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:captain_james_e_daly_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:captain_james_e_daly_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "Poolesville ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:poolesville_elementary_school"
+        },
+        "Rockwell ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:lois_p_rockwell_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:lois_p_rockwell_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "McNair ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:ronald_a_mcnair_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:ronald_a_mcnair_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "Carson ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:rachel_carson_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:rachel_carson_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "Garrett Park ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:garrett_park_elementary_school"
+        },
+        "Twinbrook ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:twinbrook_elementary_school"
+        },
+        "Beall ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:beall_elementary_school"
+        },
+        "Lakewood ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:lakewood_elementary_school"
+        },
+        "Jackson Road ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:jackson_road_elementary_school"
+        },
+        "Roscoe R. Nix ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Cloverly ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:cloverly_elementary_school"
+        },
+        "Burnt Mills ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:burnt_mills_elementary_school"
+        },
+        "Cannon Road ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:cannon_road_elementary_school"
+        },
+        "Page ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:william_tyler_page_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:william_tyler_page_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "Maryvale ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:maryvale_elementary_school"
+        },
+        "Meadow Hall ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:meadow_hall_elementary_school"
+        },
+        "Travilah ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Farmland ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:farmland_elementary_school"
+        },
+        "Luxmanor ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:luxmanor_elementary_school"
+        },
+        "Beverly Farms ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:beverly_farms_elementary_school"
+        },
+        "Ritchie Park ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:ritchie_park_elementary_school"
+        },
+        "College Gardens ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:college_gardens_elementary_school"
+        },
+        "Fallsmead ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:fallsmead_elementary_school"
+        },
+        "Wayside ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:wayside_elementary_school"
+        },
+        "Cold Spring ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:cold_spring_elementary_school"
+        },
+        "Dufief ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:dufief_elementary_school"
+        },
+        "Ride ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:dr_sally_k_ride_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:dr_sally_k_ride_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "Marshall ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Burtonsville ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:burtonsville_elementary_school"
+        },
+        "Fairland ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:fairland_elementary_school"
+        },
+        "JoAnn Leleck ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:broad_acres_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:broad_acres_elementary_school"
+          ],
+          "reason": "MCPS current name is JoAnn Leleck at Broad Acres; workbook retains Broad Acres."
+        },
+        "Burning Tree ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:burning_tree_elementary_school"
+        },
+        "Bannockburn ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:bannockburn_elementary_school"
+        },
+        "Wyngate ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:wyngate_elementary_school"
+        },
+        "Ashburton ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:ashburton_elementary_school"
+        },
+        "Sherwood ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:sherwood_elementary_school"
+        },
+        "Galway ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:galway_elementary_school"
+        },
+        "Stonegate ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Greencastle ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:greencastle_elementary_school"
+        },
+        "Little Bennett ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:little_bennett_elementary_school"
+        },
+        "William B. Gibbs Jr. ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:william_b_gibbs_jr_elementary_school"
+        },
+        "Great Seneca Creek ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:great_seneca_creek_elementary_school"
+        },
+        "Wilson Wims ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:wilson_wims_elementary_school"
+        },
+        "Bayard Rustin ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:bayard_rustin_elementary"
+        },
+        "Snowden Farm ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:snowden_farm_elementary"
+        },
+        "Cabin Branch ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:cabin_branch_elementary"
+        },
+        "Darnestown ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:darnestown_elementary_school"
+        },
+        "Jones Lane ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Bethesda ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:bethesda_elementary_school"
+        },
+        "Somerset ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:somerset_elementary_school"
+        },
+        "Westbrook ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:westbrook_elementary_school"
+        },
+        "Bradley Hills ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:bradley_hills_elementary_school"
+        },
+        "Wood Acres ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:wood_acres_elementary_school"
+        },
+        "Olney ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:olney_elementary_school"
+        },
+        "Westover ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:westover_elementary_school"
+        },
+        "Barnsley ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:lucy_v_barnsley_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:lucy_v_barnsley_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "Flower Valley ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:flower_valley_elementary_school"
+        },
+        "Candlewood ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:candlewood_elementary_school"
+        },
+        "South Lake ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:south_lake_elementary_school"
+        },
+        "Sequoyah ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:sequoyah_elementary_school"
+        },
+        "Fields Road ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:fields_road_elementary_school"
+        },
+        "Stedwick ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:stedwick_elementary_school"
+        },
+        "Strawberry Knoll ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:strawberry_knoll_elementary_school"
+        },
+        "Diamond ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:diamond_elementary_school"
+        },
+        "Harriett Tubman ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:harriet_r_tubman_elementary",
+          "school_ids": [
+            "montgomery_county_md:harriet_r_tubman_elementary"
+          ],
+          "reason": "MCPS layer and workbook differ in spelling and middle initial."
+        },
+        "Potomac ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:potomac_elementary_school"
+        },
+        "Seven Locks ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:seven_locks_elementary_school"
+        },
+        "Carderock Springs ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:carderock_springs_elementary_school"
+        },
+        "Bells Mill ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:bells_mill_elementary_school"
+        },
+        "Monocacy ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:monocacy_elementary_school"
+        },
+        "Cashell ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:cashell_elementary_school"
+        },
+        "Greenwood ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:greenwood_elementary_school"
+        },
+        "Belmont ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:belmont_elementary_school"
+        },
+        "Resnik ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:judith_a_resnik_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:judith_a_resnik_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "Sligo Creek ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:sligo_creek_elementary_school"
+        },
+        "Brooke Grove ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:brooke_grove_elementary_school"
+        },
+        "Spark M. Matsunaga ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:spark_m_matsunaga_elementary_school"
+        },
+        "Goshen ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:goshen_elementary_school"
+        },
+        "Flower Hill ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:flower_hill_elementary_school"
+        },
+        "Washington Grove ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:washington_grove_elementary_school"
+        },
+        "Gaithersburg ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:gaithersburg_elementary_school"
+        },
+        "Rosemont ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:rosemont_elementary_school"
+        },
+        "Mill Creek Towne ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:mill_creek_towne_elementary_school"
+        },
+        "Whetstone ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:whetstone_elementary_school"
+        },
+        "Brown Station ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:brown_station_elementary_school"
+        },
+        "Watkins Mill ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:watkins_mill_elementary_school"
+        },
+        "Summit Hall ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:summit_hall_elementary_school"
+        },
+        "Viers Mill ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:viers_mill_elementary_school"
+        },
+        "Rock Creek Forest ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:rock_creek_forest_elementary_school"
+        },
+        "Highland ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:highland_elementary_school"
+        },
+        "Montgomery Knolls ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Weller Road ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:weller_road_elementary_school"
+        },
+        "Stone Mill ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Damascus ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:damascus_elementary_school"
+        },
+        "Cedar Grove ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:cedar_grove_elementary_school"
+        },
+        "Woodfield ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:woodfield_elementary_school"
+        },
+        "Clearspring ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:clearspring_elementary_school"
+        },
+        "Drew ES": {
+          "status": "matched_alias",
+          "school_id": "montgomery_county_md:dr_charles_r_drew_elementary_school",
+          "school_ids": [
+            "montgomery_county_md:dr_charles_r_drew_elementary_school"
+          ],
+          "reason": "MCPS boundary uses surname only."
+        },
+        "Takoma Park ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "East Silver Spring ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:east_silver_spring_elementary_school"
+        },
+        "Woodlin ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:woodlin_elementary_school"
+        },
+        "Glen Haven ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:glen_haven_elementary_school"
+        },
+        "Oakland Terrace ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:oakland_terrace_elementary_school"
+        },
+        "Flora M. Singer ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:flora_m_singer_elementary_school"
+        },
+        "Rolling Terrace ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:rolling_terrace_elementary_school"
+        },
+        "Sargent Shriver ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:sargent_shriver_elementary_school"
+        },
+        "Bel Pre ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Glenallan ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:glenallan_elementary_school"
+        },
+        "Rock Creek Valley ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:rock_creek_valley_elementary_school"
+        },
+        "Kensington-Parkwood ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:kensington_parkwood_elementary_school"
+        },
+        "Highland View ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:highland_view_elementary_school"
+        },
+        "Georgian Forest ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:georgian_forest_elementary_school"
+        },
+        "Wheaton Woods ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:wheaton_woods_elementary_school"
+        },
+        "Arcola ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:arcola_elementary_school"
+        },
+        "New Hampshire Estates ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Rosemary Hills ES": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Rock View ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:rock_view_elementary_school"
+        },
+        "Harmony Hills ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:harmony_hills_elementary_school"
+        },
+        "Forest Knolls ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:forest_knolls_elementary_school"
+        },
+        "Kemp Mill ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:kemp_mill_elementary_school"
+        },
+        "Brookhaven ES": {
+          "status": "matched",
+          "school_id": "montgomery_county_md:brookhaven_elementary_school"
+        }
+      }
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "feature_name_field": "NAME",
+      "mappings": {
+        "ACCOKEEK ACADEMY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:accokeek_academy"
+        },
+        "ADELPHI ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:adelphi_elementary_school"
+        },
+        "ANDREW JACKSON ACADEMY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:andrew_jackson_academy"
+        },
+        "ALLENWOOD ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:allenwood_elementary_school"
+        },
+        "APPLE GROVE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:apple_grove_elementary_school"
+        },
+        "ARDMORE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:ardmore_elementary_school"
+        },
+        "ARROWHEAD ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:arrowhead_elementary_school"
+        },
+        "AVALON ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:avalon_elementary_school"
+        },
+        "BADEN ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:baden_elementary_school"
+        },
+        "BARNABY MANOR ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:barnaby_manor_elementary_school"
+        },
+        "BEACON HEIGHTS ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "BELTSVILLE ACADEMY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:beltsville_academy"
+        },
+        "BERWYN HEIGHTS ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "BLADENSBURG ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:bladensburg_elementary_school"
+        },
+        "BARACK OBAMA ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:barack_obama_elementary_school"
+        },
+        "BOND MILL ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:bond_mill_elementary_school"
+        },
+        "BRADBURY HEIGHTS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:bradbury_heights_elementary_school"
+        },
+        "BRANDYWINE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:brandywine_elementary_school"
+        },
+        "CALVERTON ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:calverton_elementary_school"
+        },
+        "CAPITOL HEIGHTS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:capitol_heights_elementary_school"
+        },
+        "CARMODY HILLS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:carmody_hills_elementary_school"
+        },
+        "CARROLLTON ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "CLINTON GROVE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:clinton_grove_elementary_school"
+        },
+        "CHEROKEE LANE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:cherokee_lane_elementary_school"
+        },
+        "CAROLE HIGHLANDS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:carole_highlands_elementary_school"
+        },
+        "CHILLUM ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:chillum_elementary_school"
+        },
+        "COLIN L POWELL ACADEMY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:colin_l_powell_academy"
+        },
+        "COLUMBIA PARK ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:columbia_park_elementary_school"
+        },
+        "COOL SPRING ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:cool_spring_elementary_school"
+        },
+        "COOPER LANE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:cooper_lane_elementary_school"
+        },
+        "CATHERINE T REED ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:catherine_t_reed_elementary_school"
+        },
+        "CORA L RICE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:cora_l_rice_elementary_school"
+        },
+        "DOSWELL E BROOKS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:doswell_e_brooks_elementary_school"
+        },
+        "DEERFIELD RUN ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:deerfield_run_elementary_school"
+        },
+        "DISTRICT HEIGHTS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:district_heights_elementary_school"
+        },
+        "DODGE PARK ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:dodge_park_elementary_school"
+        },
+        "EDWARD M FELEGY ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:edward_m_felegy_elementary_school"
+        },
+        "FRANCIS T EVANS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:francis_t_evans_elementary_school"
+        },
+        "FRANCIS SCOTT KEY ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:francis_scott_key_elementary_school"
+        },
+        "FLINTSTONE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:flintstone_elementary_school"
+        },
+        "FOREST HEIGHTS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:forest_heights_elementary_school"
+        },
+        "FORT FOOTE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:fort_foote_elementary_school"
+        },
+        "FORT WASHINGTON FOREST ELEM": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:fort_washington_forest_elementary_school"
+        },
+        "GAYWOOD ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "GREENBELT ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:greenbelt_elementary_school"
+        },
+        "GLENN DALE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:glenn_dale_elementary_school"
+        },
+        "GLASSMANOR ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:glassmanor_elementary_school"
+        },
+        "GLADYS NOON SPELLMAN ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "HIGH BRIDGE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:high_bridge_elementary_school"
+        },
+        "HIGHLAND PARK ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:highland_park_elementary_school"
+        },
+        "HILLCREST HEIGHTS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:hillcrest_heights_elementary_school"
+        },
+        "HOLLYWOOD ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:hollywood_elementary_school"
+        },
+        "HYATTSVILLE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:hyattsville_elementary_school"
+        },
+        "INDIAN QUEEN ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:indian_queen_elementary_school"
+        },
+        "JOHN H BAYNE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:john_h_bayne_elementary_school"
+        },
+        "J FRANK DENT ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:j_frank_dent_elementary_school"
+        },
+        "JAMES H HARRISON ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:james_h_harrison_elementary_school"
+        },
+        "JAMES MCHENRY ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:james_mchenry_elementary_school"
+        },
+        "JAMES RYDER RANDALL ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:james_ryder_randall_elementary_school"
+        },
+        "JUDGE SYLVANIA W WOODS, SR. ELEM": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:judge_sylvania_w_woods_sr_elementary_school"
+        },
+        "KENILWORTH ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:kenilworth_elementary_school"
+        },
+        "KETTERING ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:kettering_elementary_school"
+        },
+        "KINGSFORD ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:kingsford_elementary_school"
+        },
+        "LAKE ARBOR ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:lake_arbor_elementary_school"
+        },
+        "LAMONT ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "LAUREL ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:laurel_elementary_school"
+        },
+        "LEWISDALE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:lewisdale_elementary_school"
+        },
+        "LONGFIELDS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:longfields_elementary_school"
+        },
+        "LANGLEY PK-MCCORMICK ELEMENTARY": {
+          "status": "matched_alias",
+          "school_id": "prince_georges_county_md:langley_park_mccormick_elementary_school",
+          "school_ids": [
+            "prince_georges_county_md:langley_park_mccormick_elementary_school"
+          ],
+          "reason": "PGCPS layer abbreviates Park as PK and uses hyphen instead of slash."
+        },
+        "MAGNOLIA ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:magnolia_elementary_school"
+        },
+        "MARLTON ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:marlton_elementary_school"
+        },
+        "MARY HARRIS \"MOTHER\" JONES ELEM": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:mary_harris_mother_jones_elementary_school"
+        },
+        "MATTAPONI ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:mattaponi_elementary_school"
+        },
+        "MARGARET BRENT ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "MELWOOD ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:melwood_elementary_school"
+        },
+        "MONTPELIER ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:montpelier_elementary_school"
+        },
+        "MT RAINIER ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "NORTH FORESTVILLE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:north_forestville_elementary_school"
+        },
+        "NORTHVIEW ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:northview_elementary_school"
+        },
+        "OAKLANDS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:oaklands_elementary_school"
+        },
+        "OXON HILL ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:oxon_hill_elementary_school"
+        },
+        "PAINT BRANCH ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:paint_branch_elementary_school"
+        },
+        "PANORAMA ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "PATUXENT ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:patuxent_elementary_school"
+        },
+        "PERRYWOOD ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "PORT TOWNS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:port_towns_elementary_school"
+        },
+        "POINTER RIDGE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:pointer_ridge_elementary_school"
+        },
+        "PRINCETON ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "ROBERT FROST ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "ROBERT R GRAY ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:robert_r_gray_elementary_school"
+        },
+        "RIDGECREST ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:ridgecrest_elementary_school"
+        },
+        "RIVERDALE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:riverdale_elementary_school"
+        },
+        "ROCKLEDGE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:rockledge_elementary_school"
+        },
+        "ROGERS HEIGHTS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:rogers_heights_elementary_school"
+        },
+        "ROSA L PARKS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:rosa_l_parks_elementary_school"
+        },
+        "ROSARYVILLE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:rosaryville_elementary_school"
+        },
+        "SAMUEL CHASE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:samuel_chase_elementary_school"
+        },
+        "SAMUEL P MASSIE ACADEMY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:samuel_p_massie_academy"
+        },
+        "SEABROOK ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:seabrook_elementary_school"
+        },
+        "SEAT PLEASANT ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:seat_pleasant_elementary_school"
+        },
+        "SPRINGHILL LAKE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:springhill_lake_elementary_school"
+        },
+        "SCOTCHTOWN HILLS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:scotchtown_hills_elementary_school"
+        },
+        "SUITLAND ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:suitland_elementary_school"
+        },
+        "TAYAC ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:tayac_elementary_school"
+        },
+        "TEMPLETON ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:templeton_elementary_school"
+        },
+        "TULIP GROVE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:tulip_grove_elementary_school"
+        },
+        "THOMAS S STONE ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "UNIVERSITY PARK ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "VANSVILLE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:vansville_elementary_school"
+        },
+        "VALLEY VIEW ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:valley_view_elementary_school"
+        },
+        "WALDON WOODS ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:waldon_woods_elementary_school"
+        },
+        "WILLIAM BEANES ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:william_beanes_elementary_school"
+        },
+        "WILLIAM W HALL ACADEMY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:william_w_hall_academy"
+        },
+        "WHITEHALL ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:whitehall_elementary_school"
+        },
+        "WOODMORE ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:woodmore_elementary_school"
+        },
+        "WOODRIDGE ELEMENTARY": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "WILLIAM PACA ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:william_paca_elementary_school"
+        },
+        "YORKTOWN ELEMENTARY": {
+          "status": "matched",
+          "school_id": "prince_georges_county_md:yorktown_elementary_school"
+        }
+      }
+    },
+    {
+      "path": "boundaries/dc_elementary_boundaries_current.geojson",
+      "feature_name_field": "NAME",
+      "mappings": {
+        "Seaton": {
+          "status": "matched",
+          "school_id": "washington_dc:seaton_elementary_school"
+        },
+        "Shepherd": {
+          "status": "matched",
+          "school_id": "washington_dc:shepherd_elementary_school"
+        },
+        "Wheatley": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:wheatley_education_campus",
+          "school_ids": [
+            "washington_dc:wheatley_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "Ludlow-Taylor": {
+          "status": "matched",
+          "school_id": "washington_dc:ludlow_taylor_elementary_school"
+        },
+        "Tyler": {
+          "status": "matched",
+          "school_id": "washington_dc:tyler_elementary_school"
+        },
+        "Bruce Monroe @ Park View": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:bruce_monroe_elementary_school_park_view",
+          "school_ids": [
+            "washington_dc:bruce_monroe_elementary_school_park_view"
+          ],
+          "reason": "Workbook punctuation and Elementary School wording differ."
+        },
+        "Brightwood": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:brightwood_education_campus",
+          "school_ids": [
+            "washington_dc:brightwood_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "Garfield": {
+          "status": "matched",
+          "school_id": "washington_dc:garfield_elementary_school"
+        },
+        "Hearst": {
+          "status": "matched",
+          "school_id": "washington_dc:hearst_elementary_school"
+        },
+        "Wilson, J.O.": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:j_o_wilson_elementary_school",
+          "school_ids": [
+            "washington_dc:j_o_wilson_elementary_school"
+          ],
+          "reason": "DCGIS uses surname-first punctuation."
+        },
+        "Harris, C. W": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:c_w_harris_elementary_school",
+          "school_ids": [
+            "washington_dc:c_w_harris_elementary_school"
+          ],
+          "reason": "DCGIS uses surname-first punctuation."
+        },
+        "Van Ness": {
+          "status": "matched",
+          "school_id": "washington_dc:van_ness_elementary_school"
+        },
+        "Nalle": {
+          "status": "matched",
+          "school_id": "washington_dc:nalle_elementary_school"
+        },
+        "Takoma": {
+          "status": "matched",
+          "school_id": "washington_dc:takoma_elementary_school"
+        },
+        "Janney": {
+          "status": "matched",
+          "school_id": "washington_dc:janney_elementary_school"
+        },
+        "Turner": {
+          "status": "matched",
+          "school_id": "washington_dc:turner_elementary_school"
+        },
+        "Cleveland": {
+          "status": "matched",
+          "school_id": "washington_dc:cleveland_elementary_school"
+        },
+        "Truesdell": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:truesdell_education_campus",
+          "school_ids": [
+            "washington_dc:truesdell_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "Savoy": {
+          "status": "matched",
+          "school_id": "washington_dc:savoy_elementary_school"
+        },
+        "Walker-Jones": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:walker_jones_education_campus",
+          "school_ids": [
+            "washington_dc:walker_jones_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "Boone": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Patterson": {
+          "status": "matched",
+          "school_id": "washington_dc:patterson_elementary_school"
+        },
+        "Key": {
+          "status": "matched",
+          "school_id": "washington_dc:key_elementary_school"
+        },
+        "Plummer": {
+          "status": "matched",
+          "school_id": "washington_dc:plummer_elementary_school"
+        },
+        "Bancroft": {
+          "status": "matched",
+          "school_id": "washington_dc:bancroft_elementary_school"
+        },
+        "Reed, Marie": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:marie_reed_elementary_school",
+          "school_ids": [
+            "washington_dc:marie_reed_elementary_school"
+          ],
+          "reason": "DCGIS uses surname-first punctuation."
+        },
+        "Payne": {
+          "status": "matched",
+          "school_id": "washington_dc:payne_elementary_school"
+        },
+        "Lasalle-Backus": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:lasalle_backus_education_campus",
+          "school_ids": [
+            "washington_dc:lasalle_backus_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "Raymond": {
+          "status": "matched",
+          "school_id": "washington_dc:raymond_elementary_school"
+        },
+        "Langdon": {
+          "status": "matched",
+          "school_id": "washington_dc:langdon_elementary_school"
+        },
+        "Moten": {
+          "status": "matched",
+          "school_id": "washington_dc:moten_elementary_school"
+        },
+        "Hendley": {
+          "status": "matched",
+          "school_id": "washington_dc:hendley_elementary_school"
+        },
+        "Stoddert": {
+          "status": "matched",
+          "school_id": "washington_dc:stoddert_elementary_school"
+        },
+        "Mann": {
+          "status": "matched",
+          "school_id": "washington_dc:mann_elementary_school"
+        },
+        "Cooke, H.D": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:h_d_cooke_elementary_school",
+          "school_ids": [
+            "washington_dc:h_d_cooke_elementary_school"
+          ],
+          "reason": "DCGIS uses surname-first punctuation."
+        },
+        "Hyde-Addison": {
+          "status": "matched",
+          "school_id": "washington_dc:hyde_addison_elementary_school"
+        },
+        "Browne": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:browne_education_campus",
+          "school_ids": [
+            "washington_dc:browne_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "King, Martin Luther": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:king_elementary_school",
+          "school_ids": [
+            "washington_dc:king_elementary_school"
+          ],
+          "reason": "DCGIS uses the honoree's full name while workbook uses King."
+        },
+        "Brent": {
+          "status": "matched",
+          "school_id": "washington_dc:brent_elementary_school"
+        },
+        "Peabody-Watkins": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:watkins_elementary_school",
+          "school_ids": [
+            "washington_dc:watkins_elementary_school"
+          ],
+          "reason": "Combined DCPS cluster boundary; the rated K-5 campus in the workbook is Watkins."
+        },
+        "Bunker Hill": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        },
+        "Burrville": {
+          "status": "matched",
+          "school_id": "washington_dc:burrville_elementary_school"
+        },
+        "Leckie": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:leckie_education_campus",
+          "school_ids": [
+            "washington_dc:leckie_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "Simon": {
+          "status": "matched",
+          "school_id": "washington_dc:simon_elementary_school"
+        },
+        "Beers": {
+          "status": "matched",
+          "school_id": "washington_dc:beers_elementary_school"
+        },
+        "Murch": {
+          "status": "matched",
+          "school_id": "washington_dc:murch_elementary_school"
+        },
+        "Maury": {
+          "status": "matched",
+          "school_id": "washington_dc:maury_elementary_school"
+        },
+        "Amidon-Bowen": {
+          "status": "matched",
+          "school_id": "washington_dc:amidon_bowen_elementary_school"
+        },
+        "Kimball": {
+          "status": "matched",
+          "school_id": "washington_dc:kimball_elementary_school"
+        },
+        "Burroughs": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:burroughs_education_campus",
+          "school_ids": [
+            "washington_dc:burroughs_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "Thomas": {
+          "status": "matched",
+          "school_id": "washington_dc:thomas_elementary_school"
+        },
+        "Powell": {
+          "status": "matched",
+          "school_id": "washington_dc:powell_elementary_school"
+        },
+        "Whittier": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:whittier_education_campus",
+          "school_ids": [
+            "washington_dc:whittier_education_campus"
+          ],
+          "reason": "DCGIS boundary omits Education Campus."
+        },
+        "Smothers": {
+          "status": "matched",
+          "school_id": "washington_dc:smothers_elementary_school"
+        },
+        "Stanton": {
+          "status": "matched",
+          "school_id": "washington_dc:stanton_elementary_school"
+        },
+        "Noyes": {
+          "status": "matched",
+          "school_id": "washington_dc:noyes_elementary_school"
+        },
+        "Oyster-Adams": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:oyster_adams_bilingual_school",
+          "school_ids": [
+            "washington_dc:oyster_adams_bilingual_school"
+          ],
+          "reason": "DCGIS boundary omits Bilingual School."
+        },
+        "Malcolm X": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:malcolm_x_elementary_school_green",
+          "school_ids": [
+            "washington_dc:malcolm_x_elementary_school_green"
+          ],
+          "reason": "Workbook includes the @ Green location suffix."
+        },
+        "Houston": {
+          "status": "matched",
+          "school_id": "washington_dc:houston_elementary_school"
+        },
+        "Thomson": {
+          "status": "matched",
+          "school_id": "washington_dc:thomson_elementary_school"
+        },
+        "Miner": {
+          "status": "matched",
+          "school_id": "washington_dc:miner_elementary_school"
+        },
+        "Langley": {
+          "status": "matched",
+          "school_id": "washington_dc:langley_elementary_school"
+        },
+        "Whitlock": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:lorraine_h_whitlock_elementary_school",
+          "school_ids": [
+            "washington_dc:lorraine_h_whitlock_elementary_school"
+          ],
+          "reason": "DCGIS boundary uses surname only."
+        },
+        "Drew": {
+          "status": "matched",
+          "school_id": "washington_dc:drew_elementary_school"
+        },
+        "Garrison": {
+          "status": "matched",
+          "school_id": "washington_dc:garrison_elementary_school"
+        },
+        "Lewis": {
+          "status": "matched_alias",
+          "school_id": "washington_dc:john_lewis_elementary_school",
+          "school_ids": [
+            "washington_dc:john_lewis_elementary_school"
+          ],
+          "reason": "DCGIS boundary uses surname only."
+        },
+        "Ketcham": {
+          "status": "matched",
+          "school_id": "washington_dc:ketcham_elementary_school"
+        },
+        "Lafayette": {
+          "status": "matched",
+          "school_id": "washington_dc:lafayette_elementary_school"
+        },
+        "Barnard": {
+          "status": "matched",
+          "school_id": "washington_dc:barnard_elementary_school"
+        },
+        "Eaton": {
+          "status": "matched",
+          "school_id": "washington_dc:eaton_elementary_school"
+        },
+        "Tubman": {
+          "status": "matched",
+          "school_id": "washington_dc:tubman_elementary_school"
+        },
+        "Ross": {
+          "status": "matched",
+          "school_id": "washington_dc:ross_elementary_school"
+        },
+        "Randle Highlands": {
+          "status": "matched",
+          "school_id": "washington_dc:randle_highlands_elementary_school"
+        },
+        "School Without Walls @ Francis-Stevens": {
+          "status": "unmatched",
+          "school_id": null,
+          "reason": "No exact rated-school record in the user workbook; no polygon was inferred."
+        }
+      }
+    }
+  ]
+}

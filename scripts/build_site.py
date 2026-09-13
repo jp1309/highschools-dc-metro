@@ -77,6 +77,11 @@ def main() -> int:
         raise FileNotFoundError("middle-schools")
     copy_project(middle_root, OUTPUT / "middle-schools")
 
+    elementary_root = ROOT / "elementary-schools"
+    if not elementary_root.is_dir():
+        raise FileNotFoundError("elementary-schools")
+    copy_project(elementary_root, OUTPUT / "elementary-schools")
+
     forbidden = [path for path in OUTPUT.rglob("*") if path.name == "outputs" or path.suffix.lower() == ".xlsx"]
     if forbidden:
         raise RuntimeError(f"Private/source artifacts leaked into site: {forbidden}")

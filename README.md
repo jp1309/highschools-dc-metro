@@ -2,11 +2,25 @@
 
 [High schools](https://jp1309.github.io/highschools-dc-metro/) ·
 [Middle schools](https://jp1309.github.io/highschools-dc-metro/middle-schools/) ·
+[Elementary schools](https://jp1309.github.io/highschools-dc-metro/elementary-schools/) ·
 [Estado de validación](https://github.com/jp1309/highschools-dc-metro/actions/workflows/validate.yml)
 
-El repositorio publica dos exploradores independientes dentro del mismo sitio.
-Cada uno conserva sus propios datos, evidencias, límites, pruebas y
-documentación; los registros de high schools y middle schools no se mezclan.
+El repositorio publica tres exploradores independientes dentro del mismo sitio.
+Cada nivel conserva sus propios datos, evidencias, límites, pruebas y
+documentación; los registros de high, middle y elementary schools no se mezclan.
+
+## Elementary schools
+
+El tercer explorador reúne las 552 escuelas del libro entregado por el usuario:
+492 públicas de distrito y 60 charter públicas. Permite buscar por nombre,
+ciudad o dirección y filtrar por jurisdicción, tipo, grado atendido y score.
+Las ubicaciones y las zonas se controlan como capas independientes.
+
+Los scores y sus URLs proceden de
+`elementary_schools_greatschools_DC_area.xlsx`; el libro original y su SHA-256
+se preservan como evidencia y no se publican en GitHub Pages. Los datos, scripts,
+límites, pruebas y documentación del nivel viven exclusivamente en
+`elementary-schools/`.
 
 ## High schools
 

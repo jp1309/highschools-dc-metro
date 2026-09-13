@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-12T00:00:00Z",
+  "entries": [
+    {
+      "path": "boundaries/arlington_elementary_boundaries_2022_2023.geojson",
+      "jurisdiction": "Arlington, VA",
+      "source_name": "Arlington County GIS / Arlington Public Schools",
+      "source_url": "https://www.apsva.us/registration/maps-boundaries/",
+      "service_url": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_School_Boundaries_Polygons/FeatureServer/0",
+      "name_field": "ES_Name",
+      "school_year": "2022-2023",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "official_geometry_stale_year_metadata",
+      "feature_count": 20,
+      "note": "APS continues to publish these geometries, but the layer metadata is still 2022-2023; verify an address in the current APS locator before a residential decision."
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "jurisdiction": "Fairfax County, VA",
+      "source_name": "Fairfax County GIS / Fairfax County Public Schools",
+      "source_url": "https://boundary.fcps.edu/",
+      "service_url": "https://services1.arcgis.com/ioennV6PpG5Xodq0/ArcGIS/rest/services/OpenData_S1/FeatureServer/13",
+      "name_field": "SCHOOL_NAME",
+      "school_year": "2025-2026",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "historical_after_2026_2027_changes",
+      "feature_count": 142,
+      "note": "Do not present as 2026-2027: FCPS adopted changes after this explicitly dated open layer. Use the current FCPS locator for address decisions."
+    },
+    {
+      "path": "boundaries/falls_church_city_boundary.geojson",
+      "jurisdiction": "Falls Church City, VA",
+      "source_name": "City of Falls Church GIS",
+      "source_url": "https://www.fccps.org/o/fccps/page/enrollment",
+      "service_url": "https://services1.arcgis.com/2hmXRAz4ofcdQP6p/arcgis/rest/services/Zoning_public/FeatureServer/3",
+      "name_field": "CTYBND_ID",
+      "school_year": "current",
+      "boundary_type": "municipal_boundary",
+      "currency_status": "current_context_only",
+      "feature_count": 1,
+      "note": "Municipal service context for Mount Daniel (K-2) and Oak Street (3-5), not an individual attendance-zone boundary."
+    },
+    {
+      "path": "boundaries/alexandria_elementary_boundaries_2026_2027.geojson",
+      "jurisdiction": "Alexandria City, VA",
+      "source_name": "Alexandria City Public Schools / SchoolSite Locator",
+      "source_url": "https://www.acps.k12.va.us/families/school-boundaries",
+      "service_url": "https://www.schoolsitelocator.com/server/rest/services/ssl_AB/MapServer/444",
+      "name_field": "ELEM_DESC",
+      "school_year": "2026-2027",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "current_officially_linked_vendor_service",
+      "feature_count": 14,
+      "note": "ACPS states these elementary boundaries took effect July 1, 2026."
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "jurisdiction": "Montgomery County, MD",
+      "source_name": "Montgomery County GeoHub / Montgomery County Public Schools",
+      "source_url": "https://gis.mcpsmd.org/SchoolAssignmentTool2/Index.xhtml",
+      "service_url": "https://geohub.montgomerycountymd.gov/mapping2/rest/services/Boundaries/MCPS_Elementary_Areas/FeatureServer/0",
+      "name_field": "S_NAME",
+      "school_year": "2026-2027",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "current",
+      "feature_count": 131,
+      "note": "The MCPS assignment tool must be used for an exact address and separately shows adopted 2027-2028 changes."
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "jurisdiction": "Prince George's County, MD",
+      "source_name": "Prince George's County Public Schools",
+      "source_url": "https://gis.pgcps.org/mapgallery/",
+      "service_url": "https://services2.arcgis.com/pgXDZi16V8DawtpF/arcgis/rest/services/ArcGISonline_update_gdb/FeatureServer/0",
+      "name_field": "NAME",
+      "school_year": "2026-2027",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "current_official_webmap_layer",
+      "feature_count": 118
+    },
+    {
+      "path": "boundaries/dc_elementary_boundaries_current.geojson",
+      "jurisdiction": "Washington, DC",
+      "source_name": "DC GIS / District of Columbia Public Schools",
+      "source_url": "https://enrolldcps.dc.gov/node/41",
+      "service_url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Education_WebMercator/MapServer/19",
+      "name_field": "NAME",
+      "school_year": "unknown",
+      "boundary_type": "attendance_boundary",
+      "currency_status": "official_current_service_year_unspecified",
+      "feature_count": 74,
+      "note": "The operational DCGIS layer exposes no school-year field. Only explicitly matched DCPS neighborhood schools receive polygons; charter and citywide schools do not."
+    }
+  ]
+}

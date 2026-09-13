@@ -17,6 +17,9 @@ py -3 -m unittest discover -s tests -v
 py -3 middle-schools/scripts/validate_data.py
 py -3 middle-schools/scripts/validate_boundaries.py
 py -3 -m unittest discover -s middle-schools/tests -v
+py -3 elementary-schools/scripts/validate_data.py
+py -3 elementary-schools/scripts/validate_boundaries.py
+py -3 -m unittest discover -s elementary-schools/tests -v
 py -3 scripts/build_site.py
 py -3 -m http.server 8000
 ```
@@ -26,7 +29,9 @@ restringe las solicitudes `fetch()` desde `file://`.
 
 El mapa de middle schools queda en
 `http://localhost:8000/middle-schools/`. Este servidor local es únicamente para
-desarrollo; los enlaces públicos están en el README.
+desarrollo. El mapa de elementary schools queda en
+`http://localhost:8000/elementary-schools/`; los enlaces públicos están en el
+README.
 
 ## Principios para cambios de datos
 
@@ -128,6 +133,9 @@ py -3 -m unittest discover -s tests -v
 py -3 middle-schools/scripts/validate_data.py
 py -3 middle-schools/scripts/validate_boundaries.py
 py -3 -m unittest discover -s middle-schools/tests -v
+py -3 elementary-schools/scripts/validate_data.py
+py -3 elementary-schools/scripts/validate_boundaries.py
+py -3 -m unittest discover -s elementary-schools/tests -v
 py -3 scripts/build_site.py
 git diff --check
 ```

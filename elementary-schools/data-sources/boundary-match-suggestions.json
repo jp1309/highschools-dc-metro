@@ -1,0 +1,821 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-12T00:00:00Z",
+  "note": "Diagnostic candidates only; similarity never creates a link.",
+  "suggestions": [
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "source_name": "Fort Hunt",
+      "jurisdiction": "Fairfax County, VA",
+      "candidates": [
+        {
+          "similarity": 0.7,
+          "school_id": "fairfax_county_va:orange_hunt_elementary_school",
+          "school_name": "Orange Hunt Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "fairfax_county_va:forest_edge_elementary_school",
+          "school_name": "Forest Edge Elementary School"
+        },
+        {
+          "similarity": 0.4348,
+          "school_id": "fairfax_county_va:lorton_station_elementary_school",
+          "school_name": "Lorton Station Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "source_name": "Franconia",
+      "jurisdiction": "Fairfax County, VA",
+      "candidates": [
+        {
+          "similarity": 0.5,
+          "school_id": "fairfax_county_va:herndon_elementary_school",
+          "school_name": "Herndon Elementary School"
+        },
+        {
+          "similarity": 0.4706,
+          "school_id": "fairfax_county_va:columbia_elementary_school",
+          "school_name": "Columbia Elementary School"
+        },
+        {
+          "similarity": 0.4706,
+          "school_id": "fairfax_county_va:saratoga_elementary_school",
+          "school_name": "Saratoga Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "source_name": "Keene Mill",
+      "jurisdiction": "Fairfax County, VA",
+      "candidates": [
+        {
+          "similarity": 0.6,
+          "school_id": "fairfax_county_va:union_mill_elementary_school",
+          "school_name": "Union Mill Elementary School"
+        },
+        {
+          "similarity": 0.5714,
+          "school_id": "fairfax_county_va:centreville_elementary_school",
+          "school_name": "Centreville Elementary School"
+        },
+        {
+          "similarity": 0.5714,
+          "school_id": "fairfax_county_va:waples_mill_elementary_school",
+          "school_name": "Waples Mill Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "source_name": "Rolling Valley",
+      "jurisdiction": "Fairfax County, VA",
+      "candidates": [
+        {
+          "similarity": 0.6429,
+          "school_id": "fairfax_county_va:sunrise_valley_elementary_school",
+          "school_name": "Sunrise Valley Elementary School"
+        },
+        {
+          "similarity": 0.64,
+          "school_id": "fairfax_county_va:hunt_valley_elementary_school",
+          "school_name": "Hunt Valley Elementary School"
+        },
+        {
+          "similarity": 0.6154,
+          "school_id": "fairfax_county_va:hybla_valley_elementary_school",
+          "school_name": "Hybla Valley Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "source_name": "West Springfield",
+      "jurisdiction": "Fairfax County, VA",
+      "candidates": [
+        {
+          "similarity": 0.7879,
+          "school_id": "fairfax_county_va:north_springfield_elementary_school",
+          "school_name": "North Springfield Elementary School"
+        },
+        {
+          "similarity": 0.6286,
+          "school_id": "fairfax_county_va:springfield_estates_elementary_school",
+          "school_name": "Springfield Estates Elementary School"
+        },
+        {
+          "similarity": 0.5926,
+          "school_id": "fairfax_county_va:pine_spring_elementary_school",
+          "school_name": "Pine Spring Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "source_name": "Fort Belvoir Primary",
+      "jurisdiction": "Fairfax County, VA",
+      "candidates": [
+        {
+          "similarity": 0.4242,
+          "school_id": "fairfax_county_va:bren_mar_park_elementary_school",
+          "school_name": "Bren Mar Park Elementary School"
+        },
+        {
+          "similarity": 0.4138,
+          "school_id": "fairfax_county_va:deer_park_elementary_school",
+          "school_name": "Deer Park Elementary School"
+        },
+        {
+          "similarity": 0.4138,
+          "school_id": "fairfax_county_va:westbriar_elementary_school",
+          "school_name": "Westbriar Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "source_name": "Fort Belvoir Upper",
+      "jurisdiction": "Fairfax County, VA",
+      "candidates": [
+        {
+          "similarity": 0.5333,
+          "school_id": "fairfax_county_va:mcnair_upper_elementary",
+          "school_name": "McNair Upper Elementary"
+        },
+        {
+          "similarity": 0.4828,
+          "school_id": "fairfax_county_va:forest_edge_elementary_school",
+          "school_name": "Forest Edge Elementary School"
+        },
+        {
+          "similarity": 0.4444,
+          "school_id": "fairfax_county_va:belvedere_elementary_school",
+          "school_name": "Belvedere Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "source_name": "Kings Glen",
+      "jurisdiction": "Fairfax County, VA",
+      "candidates": [
+        {
+          "similarity": 0.6,
+          "school_id": "fairfax_county_va:kings_park_elementary_school",
+          "school_name": "Kings Park Elementary School"
+        },
+        {
+          "similarity": 0.5455,
+          "school_id": "fairfax_county_va:kent_gardens_elementary_school",
+          "school_name": "Kent Gardens Elementary School"
+        },
+        {
+          "similarity": 0.4762,
+          "school_id": "fairfax_county_va:mount_eagle_elementary_school",
+          "school_name": "Mount Eagle Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Roscoe R. Nix ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5,
+          "school_id": "montgomery_county_md:brooke_grove_elementary_school",
+          "school_name": "Brooke Grove Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "montgomery_county_md:rosemont_elementary_school",
+          "school_name": "Rosemont Elementary School"
+        },
+        {
+          "similarity": 0.4545,
+          "school_id": "montgomery_county_md:brookhaven_elementary_school",
+          "school_name": "Brookhaven Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Travilah ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.4444,
+          "school_id": "montgomery_county_md:strathmore_elementary_school",
+          "school_name": "Strathmore Elementary School"
+        },
+        {
+          "similarity": 0.4286,
+          "school_id": "montgomery_county_md:arcola_elementary_school",
+          "school_name": "Arcola Elementary School"
+        },
+        {
+          "similarity": 0.4286,
+          "school_id": "montgomery_county_md:galway_elementary_school",
+          "school_name": "Galway Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Marshall ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.6667,
+          "school_id": "montgomery_county_md:cashell_elementary_school",
+          "school_name": "Cashell Elementary School"
+        },
+        {
+          "similarity": 0.6316,
+          "school_id": "montgomery_county_md:meadow_hall_elementary_school",
+          "school_name": "Meadow Hall Elementary School"
+        },
+        {
+          "similarity": 0.625,
+          "school_id": "montgomery_county_md:maryvale_elementary_school",
+          "school_name": "Maryvale Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Stonegate ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.625,
+          "school_id": "montgomery_county_md:wyngate_elementary_school",
+          "school_name": "Wyngate Elementary School"
+        },
+        {
+          "similarity": 0.5556,
+          "school_id": "montgomery_county_md:whetstone_elementary_school",
+          "school_name": "Whetstone Elementary School"
+        },
+        {
+          "similarity": 0.5263,
+          "school_id": "montgomery_county_md:strathmore_elementary_school",
+          "school_name": "Strathmore Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Jones Lane ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5,
+          "school_id": "montgomery_county_md:south_lake_elementary_school",
+          "school_name": "South Lake Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "montgomery_county_md:waters_landing_elementary_school",
+          "school_name": "Waters Landing Elementary School"
+        },
+        {
+          "similarity": 0.4762,
+          "school_id": "montgomery_county_md:poolesville_elementary_school",
+          "school_name": "Poolesville Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Montgomery Knolls ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.6061,
+          "school_id": "montgomery_county_md:strawberry_knoll_elementary_school",
+          "school_name": "Strawberry Knoll Elementary School"
+        },
+        {
+          "similarity": 0.6,
+          "school_id": "montgomery_county_md:forest_knolls_elementary_school",
+          "school_name": "Forest Knolls Elementary School"
+        },
+        {
+          "similarity": 0.5333,
+          "school_id": "montgomery_county_md:harmony_hills_elementary_school",
+          "school_name": "Harmony Hills Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Stone Mill ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.6364,
+          "school_id": "montgomery_county_md:clopper_mill_elementary_school",
+          "school_name": "Clopper Mill Elementary School"
+        },
+        {
+          "similarity": 0.6316,
+          "school_id": "montgomery_county_md:kemp_mill_elementary_school",
+          "school_name": "Kemp Mill Elementary School"
+        },
+        {
+          "similarity": 0.6,
+          "school_id": "montgomery_county_md:bells_mill_elementary_school",
+          "school_name": "Bells Mill Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Takoma Park ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5217,
+          "school_id": "montgomery_county_md:garrett_park_elementary_school",
+          "school_name": "Garrett Park Elementary School"
+        },
+        {
+          "similarity": 0.5217,
+          "school_id": "montgomery_county_md:ritchie_park_elementary_school",
+          "school_name": "Ritchie Park Elementary School"
+        },
+        {
+          "similarity": 0.4667,
+          "school_id": "montgomery_county_md:kensington_parkwood_elementary_school",
+          "school_name": "Kensington Parkwood Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Bel Pre ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5263,
+          "school_id": "montgomery_county_md:brooke_grove_elementary_school",
+          "school_name": "Brooke Grove Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "montgomery_county_md:beall_elementary_school",
+          "school_name": "Beall Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "montgomery_county_md:beverly_farms_elementary_school",
+          "school_name": "Beverly Farms Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "New Hampshire Estates ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.4516,
+          "school_id": "montgomery_county_md:pine_crest_elementary_school",
+          "school_name": "Pine Crest Elementary School"
+        },
+        {
+          "similarity": 0.3902,
+          "school_id": "montgomery_county_md:captain_james_e_daly_elementary_school",
+          "school_name": "Captain James E. Daly Elementary School"
+        },
+        {
+          "similarity": 0.3871,
+          "school_id": "montgomery_county_md:cresthaven_elementary_school",
+          "school_name": "Cresthaven Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "source_name": "Rosemary Hills ES",
+      "jurisdiction": "Montgomery County, MD",
+      "candidates": [
+        {
+          "similarity": 0.6667,
+          "school_id": "montgomery_county_md:bradley_hills_elementary_school",
+          "school_name": "Bradley Hills Elementary School"
+        },
+        {
+          "similarity": 0.6667,
+          "school_id": "montgomery_county_md:harmony_hills_elementary_school",
+          "school_name": "Harmony Hills Elementary School"
+        },
+        {
+          "similarity": 0.5217,
+          "school_id": "montgomery_county_md:kemp_mill_elementary_school",
+          "school_name": "Kemp Mill Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "BEACON HEIGHTS ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.6897,
+          "school_id": "prince_georges_county_md:capitol_heights_elementary_school",
+          "school_name": "Capitol Heights Elementary School"
+        },
+        {
+          "similarity": 0.6667,
+          "school_id": "prince_georges_county_md:bradbury_heights_elementary_school",
+          "school_name": "Bradbury Heights Elementary School"
+        },
+        {
+          "similarity": 0.6429,
+          "school_id": "prince_georges_county_md:forest_heights_elementary_school",
+          "school_name": "Forest Heights Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "BERWYN HEIGHTS ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.7333,
+          "school_id": "prince_georges_county_md:bradbury_heights_elementary_school",
+          "school_name": "Bradbury Heights Elementary School"
+        },
+        {
+          "similarity": 0.7143,
+          "school_id": "prince_georges_county_md:rogers_heights_elementary_school",
+          "school_name": "Rogers Heights Elementary School"
+        },
+        {
+          "similarity": 0.6429,
+          "school_id": "prince_georges_county_md:forest_heights_elementary_school",
+          "school_name": "Forest Heights Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "CARROLLTON ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.7059,
+          "school_id": "prince_georges_county_md:marlton_elementary_school",
+          "school_name": "Marlton Elementary School"
+        },
+        {
+          "similarity": 0.6316,
+          "school_id": "prince_georges_county_md:calverton_elementary_school",
+          "school_name": "Calverton Elementary School"
+        },
+        {
+          "similarity": 0.5385,
+          "school_id": "prince_georges_county_md:carole_highlands_elementary_school",
+          "school_name": "Carole Highlands Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "GAYWOOD ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.625,
+          "school_id": "prince_georges_county_md:allenwood_elementary_school",
+          "school_name": "Allenwood Elementary School"
+        },
+        {
+          "similarity": 0.625,
+          "school_id": "prince_georges_county_md:hollywood_elementary_school",
+          "school_name": "Hollywood Elementary School"
+        },
+        {
+          "similarity": 0.5714,
+          "school_id": "prince_georges_county_md:melwood_elementary_school",
+          "school_name": "Melwood Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "GLADYS NOON SPELLMAN ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5333,
+          "school_id": "prince_georges_county_md:glassmanor_elementary_school",
+          "school_name": "Glassmanor Elementary School"
+        },
+        {
+          "similarity": 0.4571,
+          "school_id": "prince_georges_county_md:glenarden_woods_elementary_school",
+          "school_name": "Glenarden Woods Elementary School"
+        },
+        {
+          "similarity": 0.4571,
+          "school_id": "prince_georges_county_md:thomas_g_pullen_school",
+          "school_name": "Thomas G. Pullen School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "LAMONT ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:avalon_elementary_school",
+          "school_name": "Avalon Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:glassmanor_elementary_school",
+          "school_name": "Glassmanor Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:montpelier_elementary_school",
+          "school_name": "Montpelier Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "MARGARET BRENT ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5217,
+          "school_id": "prince_georges_county_md:greenbelt_elementary_school",
+          "school_name": "Greenbelt Elementary School"
+        },
+        {
+          "similarity": 0.4762,
+          "school_id": "prince_georges_county_md:marlton_elementary_school",
+          "school_name": "Marlton Elementary School"
+        },
+        {
+          "similarity": 0.4615,
+          "school_id": "prince_georges_county_md:paint_branch_elementary_school",
+          "school_name": "Paint Branch Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "MT RAINIER ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5263,
+          "school_id": "prince_georges_county_md:mattaponi_elementary_school",
+          "school_name": "Mattaponi Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:brandywine_elementary_school",
+          "school_name": "Brandywine Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:montpelier_elementary_school",
+          "school_name": "Montpelier Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "PANORAMA ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:barack_obama_elementary_school",
+          "school_name": "Barack Obama Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:magnolia_elementary_school",
+          "school_name": "Magnolia Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:paint_branch_elementary_school",
+          "school_name": "Paint Branch Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "PERRYWOOD ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.625,
+          "school_id": "prince_georges_county_md:melwood_elementary_school",
+          "school_name": "Melwood Elementary School"
+        },
+        {
+          "similarity": 0.5556,
+          "school_id": "prince_georges_county_md:allenwood_elementary_school",
+          "school_name": "Allenwood Elementary School"
+        },
+        {
+          "similarity": 0.5556,
+          "school_id": "prince_georges_county_md:hollywood_elementary_school",
+          "school_name": "Hollywood Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "PRINCETON ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5556,
+          "school_id": "prince_georges_county_md:templeton_elementary_school",
+          "school_name": "Templeton Elementary School"
+        },
+        {
+          "similarity": 0.5263,
+          "school_id": "prince_georges_county_md:flintstone_elementary_school",
+          "school_name": "Flintstone Elementary School"
+        },
+        {
+          "similarity": 0.5263,
+          "school_id": "prince_georges_county_md:port_towns_elementary_school",
+          "school_name": "Port Towns Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "ROBERT FROST ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.64,
+          "school_id": "prince_georges_county_md:robert_r_gray_elementary_school",
+          "school_name": "Robert R. Gray Elementary School"
+        },
+        {
+          "similarity": 0.6364,
+          "school_id": "prince_georges_county_md:fort_foote_elementary_school",
+          "school_name": "Fort Foote Elementary School"
+        },
+        {
+          "similarity": 0.5517,
+          "school_id": "prince_georges_county_md:north_forestville_elementary_school",
+          "school_name": "North Forestville Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "THOMAS S STONE ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.6207,
+          "school_id": "prince_georges_county_md:thomas_g_pullen_school",
+          "school_name": "Thomas G. Pullen School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:flintstone_elementary_school",
+          "school_name": "Flintstone Elementary School"
+        },
+        {
+          "similarity": 0.4762,
+          "school_id": "prince_georges_county_md:marlton_elementary_school",
+          "school_name": "Marlton Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "UNIVERSITY PARK ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.5185,
+          "school_id": "prince_georges_county_md:rosa_l_parks_elementary_school",
+          "school_name": "Rosa L. Parks Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "prince_georges_county_md:columbia_park_elementary_school",
+          "school_name": "Columbia Park Elementary School"
+        },
+        {
+          "similarity": 0.48,
+          "school_id": "prince_georges_county_md:dodge_park_elementary_school",
+          "school_name": "Dodge Park Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "source_name": "WOODRIDGE ELEMENTARY",
+      "jurisdiction": "Prince George's County, MD",
+      "candidates": [
+        {
+          "similarity": 0.7059,
+          "school_id": "prince_georges_county_md:woodmore_elementary_school",
+          "school_name": "Woodmore Elementary School"
+        },
+        {
+          "similarity": 0.5455,
+          "school_id": "prince_georges_county_md:pointer_ridge_elementary_school",
+          "school_name": "Pointer Ridge Elementary School"
+        },
+        {
+          "similarity": 0.5263,
+          "school_id": "prince_georges_county_md:ridgecrest_elementary_school",
+          "school_name": "Ridgecrest Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/dc_elementary_boundaries_current.geojson",
+      "source_name": "Boone",
+      "jurisdiction": "Washington, DC",
+      "candidates": [
+        {
+          "similarity": 0.5,
+          "school_id": "washington_dc:houston_elementary_school",
+          "school_name": "Houston Elementary School"
+        },
+        {
+          "similarity": 0.5,
+          "school_id": "washington_dc:thomson_elementary_school",
+          "school_name": "Thomson Elementary School"
+        },
+        {
+          "similarity": 0.4286,
+          "school_id": "washington_dc:h_d_cooke_elementary_school",
+          "school_name": "H.D. Cooke Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/dc_elementary_boundaries_current.geojson",
+      "source_name": "Bunker Hill",
+      "jurisdiction": "Washington, DC",
+      "candidates": [
+        {
+          "similarity": 0.6,
+          "school_id": "washington_dc:burrville_elementary_school",
+          "school_name": "Burrville Elementary School"
+        },
+        {
+          "similarity": 0.4706,
+          "school_id": "washington_dc:turner_elementary_school",
+          "school_name": "Turner Elementary School"
+        },
+        {
+          "similarity": 0.4444,
+          "school_id": "washington_dc:randle_highlands_elementary_school",
+          "school_name": "Randle Highlands Elementary School"
+        }
+      ]
+    },
+    {
+      "path": "boundaries/dc_elementary_boundaries_current.geojson",
+      "source_name": "School Without Walls @ Francis-Stevens",
+      "jurisdiction": "Washington, DC",
+      "candidates": [
+        {
+          "similarity": 0.4762,
+          "school_id": "washington_dc:school_within_school_goding",
+          "school_name": "School-Within-School @ Goding"
+        },
+        {
+          "similarity": 0.3478,
+          "school_id": "washington_dc:c_w_harris_elementary_school",
+          "school_name": "C.W. Harris Elementary School"
+        },
+        {
+          "similarity": 0.3385,
+          "school_id": "washington_dc:capitol_hill_montessori_logan",
+          "school_name": "Capitol Hill Montessori @ Logan"
+        }
+      ]
+    }
+  ]
+}

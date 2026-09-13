@@ -23,10 +23,12 @@ class DataValidationTests(unittest.TestCase):
     def test_level_headers_share_the_same_template(self):
         high_html = (ROOT / "index.html").read_text(encoding="utf-8")
         middle_html = (ROOT / "middle-schools" / "index.html").read_text(encoding="utf-8")
+        elementary_html = (ROOT / "elementary-schools" / "index.html").read_text(encoding="utf-8")
 
         for html, level, count in (
             (high_html, "High schools", 84),
             (middle_html, "Middle schools", 192),
+            (elementary_html, "Elementary schools", 552),
         ):
             self.assertIn(f"<h1>{level}, ubicaciones y zonas</h1>", html)
             self.assertIn(
@@ -35,6 +37,38 @@ class DataValidationTests(unittest.TestCase):
                 html,
             )
             self.assertIn("<span>Fecha de entrega de scores</span>", html)
+
+    def test_each_level_navigation_links_to_all_three_maps(self):
+        pages = {
+            "high": (ROOT / "index.html").read_text(encoding="utf-8"),
+            "middle": (ROOT / "middle-schools" / "index.html").read_text(encoding="utf-8"),
+            "elementary": (ROOT / "elementary-schools" / "index.html").read_text(encoding="utf-8"),
+        }
+        for html in pages.values():
+            self.assertIn(">High schools</a>", html)
+            self.assertIn(">Middle schools</a>", html)
+            self.assertIn(">Elementary schools</a>", html)
+
+    def test_elementary_frontend_has_all_filters_and_independent_layers(self):
+        html = (ROOT / "elementary-schools" / "index.html").read_text(encoding="utf-8")
+        app = (ROOT / "elementary-schools" / "assets" / "app.js").read_text(encoding="utf-8")
+        for control_id in (
+            "search-input",
+            "jurisdiction-filter",
+            "type-filter",
+            "grades-filter",
+            "rating-filter",
+            "toggle-boundaries",
+            "toggle-points",
+        ):
+            self.assertIn(f'id="{control_id}"', html)
+        self.assertIn("showPoints && schoolMatches", app)
+        self.assertIn("showBoundaries && boundaryMatches", app)
+        self.assertIn("Ubicación oficial pendiente", app)
+        self.assertIn("mapping?.school_ids ?? mapping?.school_id", app)
+        self.assertIn("schools.map((school) =>", app)
+        for color in ("#1a9850", "#91cf60", "#fee08b", "#fc8d59", "#d73027"):
+            self.assertIn(color, app)
 
     def test_project_data_passes_full_validation(self):
         result = validate_project(ROOT)

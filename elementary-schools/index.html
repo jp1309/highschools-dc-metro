@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mapa auditable de middle schools públicas y charter del área metropolitana de Washington, DC.">
+  <meta name="description" content="Mapa auditable de elementary schools públicas y charter del área metropolitana de Washington, DC.">
   <meta name="theme-color" content="#132a3a">
-  <title>Middle schools del área metropolitana de Washington, DC</title>
+  <title>Elementary schools del área metropolitana de Washington, DC</title>
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-  <link rel="stylesheet" href="assets/styles.css?v=20260830-middle-schools-2">
+  <link rel="stylesheet" href="assets/styles.css?v=20260912-elementary-schools">
 </head>
 <body>
   <a class="skip-link" href="#school-list">Saltar a la lista de escuelas</a>
@@ -18,12 +18,12 @@
   <header class="site-header">
     <div class="header-copy">
       <p class="eyebrow">Datos escolares · DC Metro</p>
-      <h1>Middle schools, ubicaciones y zonas</h1>
-      <p class="lede">Explore 192 escuelas con score, tipo, grados atendidos y límites oficiales cuando están disponibles.</p>
+      <h1>Elementary schools, ubicaciones y zonas</h1>
+      <p class="lede">Explore 552 escuelas con score, tipo, grados atendidos y límites oficiales cuando están disponibles.</p>
       <nav class="site-nav" aria-label="Nivel escolar">
         <a href="../">High schools</a>
-        <a href="./" aria-current="page">Middle schools</a>
-        <a href="../elementary-schools/">Elementary schools</a>
+        <a href="../middle-schools/">Middle schools</a>
+        <a href="./" aria-current="page">Elementary schools</a>
       </nav>
     </div>
     <div class="header-meta" aria-label="Información de actualización">
@@ -50,7 +50,7 @@
       <article class="kpi-card kpi-card-accent"><span class="kpi-label">Resultados visibles</span><strong id="kpi-visible">—</strong></article>
     </section>
 
-    <section class="explorer" aria-label="Explorador de middle schools">
+    <section class="explorer" aria-label="Explorador de elementary schools">
       <aside class="sidebar" aria-label="Filtros y lista de escuelas">
         <form id="filters" class="filters" role="search">
           <div class="section-heading">
@@ -59,7 +59,7 @@
           </div>
 
           <label for="search-input">Nombre, ciudad o dirección</label>
-          <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search-input" name="query" type="search" autocomplete="off" placeholder="Ej. Deal, Arlington…"></div>
+          <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search-input" name="query" type="search" autocomplete="off" placeholder="Ej. Oak Street, Arlington…"></div>
 
           <div class="filter-row">
             <div><label for="jurisdiction-filter">Jurisdicción</label><select id="jurisdiction-filter" name="jurisdiction"><option value="">Todas</option></select></div>
@@ -77,13 +77,13 @@
           </fieldset>
         </form>
 
-        <div class="list-header"><h3 id="list-title">Middle schools</h3><span id="list-count" aria-live="polite">0 resultados</span></div>
+        <div class="list-header"><h3 id="list-title">Elementary schools</h3><span id="list-count" aria-live="polite">0 resultados</span></div>
         <ul id="school-list" class="school-list" aria-labelledby="list-title" tabindex="-1"></ul>
         <p id="empty-state" class="empty-state" hidden>No hay escuelas que coincidan con los filtros.</p>
       </aside>
 
       <div class="map-column">
-        <div id="map" role="region" aria-label="Mapa interactivo de middle schools y zonas de asistencia"></div>
+        <div id="map" role="region" aria-label="Mapa interactivo de elementary schools y zonas de asistencia"></div>
         <div class="map-legend" aria-label="Leyenda de scores">
           <strong>Score</strong>
           <span><i class="legend-swatch legend-best" aria-hidden="true"></i>9–10 · verde intenso</span>
@@ -100,7 +100,7 @@
     <section class="methodology" aria-labelledby="methodology-title">
       <div><p class="eyebrow">Cómo leer este mapa</p><h2 id="methodology-title">Cobertura y límites</h2></div>
       <div class="methodology-copy">
-        <p>El universo reproduce exactamente las 192 filas con score del libro proporcionado por el usuario. Incluye escuelas con grados intermedios aunque también atiendan primaria o high school.</p>
+        <p>El universo reproduce exactamente las 552 filas con score del libro proporcionado por el usuario. Incluye escuelas que atienden al menos un grado de elementary, aunque también cubran pre-K, middle o high school.</p>
         <p>Una escuela charter o de elección puede no tener una zona residencial propia. Los polígonos se muestran solo con correspondencias explícitas y dentro de la jurisdicción correcta.</p>
         <details><summary>Limitaciones importantes</summary><ul>
           <li>El listado no es un censo completo de todas las escuelas del área: excluye fichas sin score y otras no revisadas en el archivo fuente.</li>
@@ -118,6 +118,6 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="assets/app.js?v=20260830-middle-schools-2" defer></script>
+  <script src="assets/app.js?v=20260912-elementary-schools" defer></script>
 </body>
 </html>

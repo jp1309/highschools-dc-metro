@@ -36,11 +36,20 @@ jobs:
       - name: Validate middle-school boundaries
         run: python middle-schools/scripts/validate_boundaries.py
 
+      - name: Validate elementary-school data
+        run: python elementary-schools/scripts/validate_data.py
+
+      - name: Validate elementary-school boundaries
+        run: python elementary-schools/scripts/validate_boundaries.py
+
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
 
       - name: Run middle-school unit tests
         run: python -m unittest discover -s middle-schools/tests -v
+
+      - name: Run elementary-school unit tests
+        run: python -m unittest discover -s elementary-schools/tests -v
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

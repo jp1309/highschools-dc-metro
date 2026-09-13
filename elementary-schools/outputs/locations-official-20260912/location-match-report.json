@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "run_id": "locations-official-20260912",
+  "summary": {
+    "schools": 552,
+    "verified_official": 552,
+    "pending_official_source": 0,
+    "verified_official_historical": 1,
+    "explicit_aliases_used": 48,
+    "exact_normalized_matches": 503
+  },
+  "unmatched": []
+}

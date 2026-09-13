@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "hash_normalization": "crlf_to_lf",
+  "generated_at": "2026-09-13T01:45:06.988539+00:00",
+  "sources": [
+    {
+      "id": "arlington_elementary_school_boundaries",
+      "output": "boundaries/arlington_elementary_boundaries_2022_2023.geojson",
+      "query_url": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_School_Boundaries_Polygons/FeatureServer/0/query",
+      "where": "1=1",
+      "authority": "Arlington County GIS / Arlington Public Schools",
+      "checked_at": "2026-09-13T01:44:54.311667+00:00",
+      "http_status": 200,
+      "content_type": "application/geo+json; charset=UTF-8",
+      "features": 20,
+      "year_values": [
+        "2022-2023"
+      ],
+      "sha256": "2ee00c4a273b9b03370ff575dff667bbae4f2b10d569683007c38aad0563ac8f",
+      "bytes": 630235,
+      "currency_status": "official_geometry_stale_year_metadata",
+      "note": "APS still serves these 20 official geometries and its current address locator, but the published School_Year field remains 2022-2023.",
+      "refresh_enabled": true
+    },
+    {
+      "id": "fairfax_elementary_school_attendance_areas",
+      "output": "boundaries/fairfax_elementary_boundaries_2025_2026.geojson",
+      "query_url": "https://services1.arcgis.com/ioennV6PpG5Xodq0/ArcGIS/rest/services/OpenData_S1/FeatureServer/13/query",
+      "where": "1=1",
+      "authority": "Fairfax County GIS / Fairfax County Public Schools",
+      "checked_at": "2026-09-13T01:44:57.479151+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "features": 142,
+      "year_values": [
+        "2025_26"
+      ],
+      "sha256": "f23f1099f507a764757efeded9986f6a6ea9681d36c4a2ee63e1c6264a855096",
+      "bytes": 4475639,
+      "currency_status": "historical_after_2026_2027_changes",
+      "note": "FCPS adopted changes effective 2026-2027. This snapshot preserves the latest open layer with an explicit 2025_26 field and must not be presented as a 2026-2027 boundary.",
+      "refresh_enabled": true
+    },
+    {
+      "id": "falls_church_city_boundary",
+      "output": "boundaries/falls_church_city_boundary.geojson",
+      "query_url": "https://services1.arcgis.com/2hmXRAz4ofcdQP6p/arcgis/rest/services/Zoning_public/FeatureServer/3/query",
+      "where": "1=1",
+      "authority": "City of Falls Church GIS",
+      "checked_at": "2026-09-13T01:44:57.878677+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "features": 1,
+      "year_values": [],
+      "sha256": "f4caac7550d5b3a656bbecc7d4d61499657e8cb9537807cc1fcc313b37996ff1",
+      "bytes": 17524,
+      "currency_status": "current_context_only",
+      "note": "Mount Daniel serves K-2 and Oak Street serves grades 3-5 for FCCPS residents. This is the municipal limit shared as service context, not either school's individual attendance-zone polygon.",
+      "refresh_enabled": true
+    },
+    {
+      "id": "alexandria_elementary_boundaries_2026_2027",
+      "output": "boundaries/alexandria_elementary_boundaries_2026_2027.geojson",
+      "query_url": "https://www.schoolsitelocator.com/server/rest/services/ssl_AB/MapServer/444/query",
+      "where": "STDYAREA = 'BNDRY' AND ELEM_DESC IS NOT NULL",
+      "authority": "Alexandria City Public Schools, served by SchoolSite Locator",
+      "checked_at": "2026-09-13T01:44:58.278395+00:00",
+      "http_status": 200,
+      "content_type": "application/geo+json; charset=UTF-8",
+      "features": 14,
+      "year_values": [],
+      "sha256": "acd31291e2c5804b8dacaa4b83c4770756650b0544526c7e78e4647045fd81db",
+      "bytes": 307724,
+      "currency_status": "current_officially_linked_vendor_service",
+      "note": "ACPS links this locator for its elementary boundaries effective July 1, 2026.",
+      "refresh_enabled": true
+    },
+    {
+      "id": "montgomery_mcps_elementary_school_areas",
+      "output": "boundaries/montgomery_elementary_boundaries_2026_2027.geojson",
+      "query_url": "https://geohub.montgomerycountymd.gov/mapping2/rest/services/Boundaries/MCPS_Elementary_Areas/FeatureServer/0/query",
+      "where": "1=1",
+      "authority": "Montgomery County GeoHub / Montgomery County Public Schools",
+      "checked_at": "2026-09-13T01:45:01.760739+00:00",
+      "http_status": 200,
+      "content_type": "application/geo+json; charset=UTF-8",
+      "features": 131,
+      "year_values": [
+        "2026-2027"
+      ],
+      "sha256": "3eac1b1d55905aaf0f314ba192429b26a21eda2aef77be3fd1028747e6a611b7",
+      "bytes": 2493788,
+      "currency_status": "current",
+      "note": null,
+      "refresh_enabled": true
+    },
+    {
+      "id": "prince_georges_elementary_boundaries_2026_2027",
+      "output": "boundaries/prince_georges_elementary_boundaries_2026_2027.geojson",
+      "query_url": "https://services2.arcgis.com/pgXDZi16V8DawtpF/arcgis/rest/services/ArcGISonline_update_gdb/FeatureServer/0/query",
+      "where": "1=1",
+      "authority": "Prince George's County Public Schools",
+      "checked_at": "2026-09-13T01:45:05.592864+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "features": 118,
+      "year_values": [],
+      "sha256": "f328506b4ffb3c7ae7c52f250e946658afe5673272ca0b2c9959a5ba3c2ad5bc",
+      "bytes": 2821150,
+      "currency_status": "current_official_webmap_layer",
+      "note": "The layer backs the elementary attendance map published by PGCPS for school year 2026-2027.",
+      "refresh_enabled": true
+    },
+    {
+      "id": "dc_elementary_school_attendance_zones",
+      "output": "boundaries/dc_elementary_boundaries_current.geojson",
+      "query_url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Education_WebMercator/MapServer/19/query",
+      "where": "1=1",
+      "authority": "DC GIS / District of Columbia Public Schools",
+      "checked_at": "2026-09-13T01:45:06.905302+00:00",
+      "http_status": 200,
+      "content_type": "application/geo+json; charset=UTF-8",
+      "features": 74,
+      "year_values": [],
+      "sha256": "3afa0572bf437db7afc93726daab466d4c449f5e2b241afc2ec73a98889061ea",
+      "bytes": 1330870,
+      "currency_status": "official_current_service_year_unspecified",
+      "note": "The operational official layer exposes no school-year field. Charter and citywide schools receive no inferred polygons.",
+      "refresh_enabled": true
+    }
+  ]
+}
