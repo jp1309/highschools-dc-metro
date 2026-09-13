@@ -9,6 +9,17 @@ El repositorio publica tres exploradores independientes dentro del mismo sitio.
 Cada nivel conserva sus propios datos, evidencias, límites, pruebas y
 documentación; los registros de high, middle y elementary schools no se mezclan.
 
+**Autor:** [Juan Pablo Erraez](https://github.com/jp1309) · Desarrollado con
+apoyo de Codex.
+
+## Mapas publicados
+
+| Nivel | Registros | Mapa |
+|---|---:|---|
+| High schools | 84 | [Abrir mapa](https://jp1309.github.io/highschools-dc-metro/) |
+| Middle schools | 192 | [Abrir mapa](https://jp1309.github.io/highschools-dc-metro/middle-schools/) |
+| Elementary schools | 552 | [Abrir mapa](https://jp1309.github.io/highschools-dc-metro/elementary-schools/) |
+
 ## Elementary schools
 
 El tercer explorador reúne las 552 escuelas del libro entregado por el usuario:
@@ -132,10 +143,10 @@ Consulte el [diccionario de datos](docs/DATA_DICTIONARY.md) y la
 
 Antes de cada publicación, GitHub Actions:
 
-1. valida los 84 registros y su evidencia;
-2. comprueba los GeoJSON, hashes y asociaciones;
-3. ejecuta las pruebas de regresión;
-4. construye el sitio estático;
+1. valida los registros y la evidencia de high, middle y elementary schools;
+2. comprueba los GeoJSON, hashes y asociaciones de cada nivel;
+3. ejecuta las tres suites de pruebas de regresión;
+4. construye un único sitio estático sin publicar los libros fuente;
 5. publica GitHub Pages únicamente si todo pasa.
 
 El proceso automático falla ante cobertura parcial, IDs duplicados, URLs

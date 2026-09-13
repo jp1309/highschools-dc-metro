@@ -49,6 +49,20 @@ class DataValidationTests(unittest.TestCase):
             self.assertIn(">Middle schools</a>", html)
             self.assertIn(">Elementary schools</a>", html)
 
+    def test_author_credit_is_consistent_across_readme_and_all_maps(self):
+        credit = "Juan Pablo Erraez</a> · Desarrollado con apoyo de Codex."
+        pages = (
+            ROOT / "index.html",
+            ROOT / "middle-schools" / "index.html",
+            ROOT / "elementary-schools" / "index.html",
+        )
+        for page in pages:
+            self.assertIn(credit, page.read_text(encoding="utf-8"))
+
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("**Autor:** [Juan Pablo Erraez]", readme)
+        self.assertIn("Desarrollado con\napoyo de Codex.", readme)
+
     def test_elementary_frontend_has_all_filters_and_independent_layers(self):
         html = (ROOT / "elementary-schools" / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "elementary-schools" / "assets" / "app.js").read_text(encoding="utf-8")
